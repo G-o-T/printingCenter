@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.contacts {
+    position: absolute;
+    top: 6.59vw;
+    left: 3.47vw;
+    background-color: $light;
+    padding: 64px;
+    @include offerText($primary-color);
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @include h4;
+}

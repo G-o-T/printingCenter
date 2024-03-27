@@ -1,0 +1,112 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.container {
+    margin: 110px 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.img {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btns {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 1340px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: $grey-carousel;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #dddcdc;
+    }
+
+    &:active {
+        box-shadow: 0 0 32px $light;
+    }
+}
+
+.arrow {
+    width: 13px;
+    height: 26px;
+}
+
+.left {
+    rotate: 180deg;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.title {
+    @include h5($primary-color);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: max-content;
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 360px;
+    margin: 0 10px;
+
+    &:hover .title {
+        font-weight: 700;
+    }
+}
+
+
+.turquoise {
+    background-color: $turquoise;
+}
+
+.lavender {
+    background-color: $lavender;
+}
+
+.violet {
+    background-color: $violet;
+}
+
+.skyBlue {
+    background-color: $skyBlue;
+}
+
+.pink {
+    background-color: $pink;    
+}
+
+.yellow {
+    background-color: $yellow;
+}
+
+.grey {
+    background-color: $grey;
+}

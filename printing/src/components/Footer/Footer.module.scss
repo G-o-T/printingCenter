@@ -1,0 +1,53 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+    background-color: $footer-bg;
+    padding: 45px 0;
+}
+
+.contactInfo {
+    display: flex;
+    gap: 145px;
+    @include text($light);
+}
+
+.data {
+    line-height: 150%;
+}
+
+.link {
+    @include text($light);
+    text-decoration: none;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.wrapper {
+    max-width: 1288px;
+}
+
+.title {
+    @include h5($light);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icons {
+    display: flex;
+    gap: 8px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

@@ -1,0 +1,83 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.wrapper {
+    background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%,);
+}
+
+.container {
+    position: relative;
+    display: flex;
+}
+
+.content {
+    margin: 65px 0;
+    width: 680px;
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    z-index: 3;
+}
+.text {
+    @include text($primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.price {
+    width: fit-content;
+    @include minPrice;
+}
+.list {
+    margin-left: 16px;
+    list-style-type: none;
+}
+.item {
+    @include marker(12px, 3px, 16px);
+}
+
+.title {
+    @include h2;
+}
+
+.img {
+    margin-left: 70px;
+    margin-top: 50px;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // z-index: 2;
+}
+
+.size {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 680px;
+    height: 550px;
+}
+
+.turquoise {
+    background-color: $turquoise;
+}
+
+.lavender {
+    background-color: $lavender;
+}
+
+.violet {
+    background-color: $violet;
+}
+
+.skyBlue {
+    background-color: $skyBlue;
+}
+
+.pink {
+    background-color: $pink;    
+}
+

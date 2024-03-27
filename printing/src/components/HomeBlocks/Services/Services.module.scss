@@ -1,0 +1,226 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.container {
+    padding: 108px 0 75px;
+}
+
+.wrapperShort {
+    margin-top: 58px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "print docs photo photo"
+    "print mug mug shirt"
+    "restoration widescreen card shirt"
+    "stitching widescreen sticker sticker";
+}
+
+.wrapperFull {
+    margin-top: 58px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "print docs photo photo"
+    "print mug mug shirt"
+    "restoration widescreen card shirt"
+    "stitching widescreen sticker sticker"
+    "stitching calendar calendar design"
+    "collage collage scan design";
+}
+
+.item {
+    position: relative;
+    transition: .3s;
+    text-decoration: none;
+    color: $highlight-color;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.print {
+    grid-area: print;
+    background-color: $skyBlue;
+    width: 320px;
+    height: 712px;
+}
+
+.docs {
+    grid-area: docs;
+    background-color: $turquoise;
+    width: 320px;
+    height: 368px;
+}
+
+.photo {
+    grid-area: photo;
+    background-color: $lavender;
+    height: 368px;
+    width: 660px;
+}
+
+.mug {
+    grid-area: mug;
+    background-color: $violet;
+    width: 660px;
+    height: 320px;
+}
+
+.shirt {
+    grid-area: shirt;
+    background-color: $pink;
+    width: 320px;
+    height: 712px;
+}
+
+.businessCard {
+    grid-area: card;
+    background-color: $grey;
+    width: 320px;
+    height: 368px;
+}
+
+.restoration {
+    grid-area: restoration;
+    background-color: $grey;
+    width: 320px;
+    height: 368px;
+}
+
+.stitching {
+    grid-area: stitching;
+    background-color: $violet;
+    width: 320px;
+
+}
+
+.short {
+    height: 368px;
+}
+
+.long {
+    height: 760px;
+}
+
+.widescreen {
+    grid-area: widescreen;
+    background-color: $yellow;
+    width: 320px;
+    
+}
+
+.sticker {
+    grid-area: sticker;
+    background-color: $turquoise;
+    height: 368px;
+    width: 660px;
+}
+
+.calendar {
+    grid-area: calendar;
+    background-color: $skyBlue;
+    height: 368px;
+    width: 660px;
+}
+
+.design {
+    grid-area: design;
+    background-color: $lavender;
+    width: 320px;
+    height: 760px;
+}
+
+.collage {
+    grid-area: collage;
+    background-color: $pink;
+    height: 368px;
+    width: 660px;
+}
+
+.scan {
+    grid-area: scan;
+    background-color: $yellow;
+    width: 320px;
+    height: 368px;
+}
+
+.hidden {
+    display: none;
+}
+
+.link {
+    text-decoration: none;
+    color: $highlight-color;
+    cursor: pointer;
+}
+
+.img {
+    position: absolute;
+    top: 50%; 
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+.imgCorrect {
+    width: 70%;
+    height: auto;
+}
+
+.imgCorrectPosition {
+    left: 60%;
+    transform:translate(-50%, -50%);
+}
+
+.imgCorrectPositionLeft {
+    left: 0;
+    transform:translate(-40%, -50%);
+}
+
+.title {
+    position: absolute;
+    bottom: 0; 
+    left:50%;
+    transform:translate(-50%, 0);
+    padding-bottom: 30px; 
+    width: max-content;
+    @include font(20px, 600, 130%, 0.6px);    
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 58px;
+}
+
+.imgs {
+    transition: .3s;
+}
+
+.imgMin1 {
+    position: absolute;
+    top: 6%; 
+    left:2%;
+    width: 60%;
+    height: auto;
+}
+
+.imgMin2 {
+    position: absolute;
+    top: 40%; 
+    left:50%;
+    width: 42%;
+    height: auto;
+}
+
+.imgMax1 {
+    position: absolute;
+    top: 10%; 
+    left:0;
+}
+
+.imgMax2 {
+    position: absolute;
+    left: 10%; 
+    bottom:20%;
+}
+

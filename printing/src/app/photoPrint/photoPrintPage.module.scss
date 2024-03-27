@@ -1,0 +1,70 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.bgc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $header-bg;
+}
+
+.note {
+    margin: 16px auto 0;
+    width: 1116px;
+    @include flex-column-gap(12px);
+}
+
+.pros {
+    display: flex;
+    gap: 64px;
+    margin: 85px 0;
+}
+
+.item {
+    @include flex-column-gap(10px);
+    align-items: center;
+}
+
+.header {
+    @include h5($primary-color);
+    position: relative; 
+    text-align: center;
+    width: 250px;
+}
+
+.itemText {
+    border-top: 4px solid $accent-color;
+    padding-top: 10px;
+    @include text($primary-color);
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    gap: 32px;
+}
+
+.block {
+    display: flex;
+}
+
+.exmpl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg;
+}
+
+.desc {
+    margin: 24px 0 24px 32px;
+}
+
+.img {
+    margin: 0 60px;
+}
+
+.title {
+    @include h5($primary-color);
+    padding-bottom: 8px;
+}
+

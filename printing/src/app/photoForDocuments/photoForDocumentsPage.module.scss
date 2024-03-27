@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.bgc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $header-bg;
+}
+.note {
+    margin-top: 16px;
+    width: 1116px;
+    @include flex-column-gap(12px);
+}
+
+.list {
+    list-style-type: none;
+    margin-left: 16px;
+}
+
+.item {
+    @include marker(16px, 3px, 16px);
+}

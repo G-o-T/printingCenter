@@ -1,0 +1,22 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.btn {
+    border: none;
+    padding: 20px 15px;
+    @include btn;
+    cursor: pointer;
+    color: $primary-color;
+    position: relative;
+    background-color: transparent;
+    transition: .3s;
+
+    &::after {
+        @include after;
+    }
+
+    &:hover {
+        padding: 20px 60px;
+        background-color: $accent-color;
+    }
+}

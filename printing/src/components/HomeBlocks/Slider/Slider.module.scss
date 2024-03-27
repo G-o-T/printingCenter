@@ -1,0 +1,113 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.wrapper {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.h1 {
+    @include h1;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    @include offerSub;
+    margin-bottom: 20px;
+}
+
+.text {
+    @include offerText($light);
+    margin-left: 28px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+}
+
+.sliderWrapper {
+    min-height: 600px;
+    padding: 80px 110px 40px;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.deco {
+    width: 4px;
+    height: 100%;
+}
+
+.list {
+    display: flex;
+}
+
+.lilacBG {
+    background: linear-gradient(
+        90deg,
+        rgba(199, 115, 193, 1) 0%,
+        rgba(215, 155, 211, 1) 100%
+    );
+}
+
+.lilacPipe {
+    background-color: $lilac;
+}
+
+.lilacBtn {
+    background-color: $lilac;
+    color: $light;
+}
+
+.img {
+    position: absolute;
+    right: -20px;
+    top: -35px;
+    z-index: 1;
+}
+
+.offer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.blackBG {
+    background: linear-gradient(
+        90deg,
+        rgba(32, 29, 29, 1) 0%,
+        rgba(51, 51, 51, 1) 100%
+    );
+}
+
+.blackPipe {
+    background-color: $accent-color;
+}
+
+.blackBtn {
+    background-color: $accent-color;
+    color: $light;
+}
+
+.blueBG {
+    background: linear-gradient(
+        90deg,
+        rgba(92, 162, 213, 1) 0%,
+        rgba(172, 215, 246, 1) 100%
+    );
+}
+
+.bluePipe {
+    background-color: $deepblue;
+}
+
+.blueBtn {
+    background-color: $deepblue;
+    color: $light;
+}

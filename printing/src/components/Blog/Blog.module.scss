@@ -1,0 +1,84 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.wrapper {
+    max-width: 1340px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    max-height: 720px;
+    overflow: hidden;
+}
+
+.cardContainerMain {
+    background-color: $light;
+    width: 432px;
+    min-height: 458px;
+    padding: 20px 26px;
+
+    &:hover {
+        box-shadow: 4px 4px 16px #00000015;
+    }
+}
+
+.cardContainerBlog {
+    background-color: $light;
+    width: 424px;
+    padding: 20px;
+
+    &:hover {
+        box-shadow: 0px 0px 16px #00000015;
+    }
+}
+
+.bg {
+    background-color: $header-bg;
+    padding: 72px;
+}
+
+.title {
+    @include h2;
+    padding-bottom: 62px;
+}
+
+.cardTitle {
+    @include h4;
+    margin-top: 21px;
+}
+
+.cardLink{
+    text-decoration: none;
+    color: $primary-color;
+    cursor: pointer;
+}
+
+.btnPadding {
+    display: flex;
+    margin: 50px auto 0;
+}
+
+.desc {
+    width: 100%;
+    padding-top: 20px;
+    @include h5($primary-color);
+    font-weight: 400;
+}
+
+.mist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 98%, rgba(255,255,255,1) 100%,);
+}
+
+.img {
+    width: 384px;
+    height: 304px;
+    overflow: hidden;
+}

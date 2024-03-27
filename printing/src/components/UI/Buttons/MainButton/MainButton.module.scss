@@ -1,0 +1,17 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.btn {
+    border: none;
+    padding: 20px 60px;
+    @include btn;
+    cursor: pointer;
+
+    &:hover {
+        filter: contrast(120%);
+    }
+
+    &:active {
+        filter: drop-shadow(0 0 8px $light);
+    }
+}

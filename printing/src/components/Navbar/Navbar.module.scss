@@ -1,0 +1,95 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.menu {
+    display: flex;
+    gap: 48px;
+}
+
+.item {
+    display: flex;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    left: -24px;
+    top: 28px;
+    width: 440px;
+    background-color: $header-bg;
+    padding: 30px 24px 0;
+    z-index: 9;
+}
+
+.block {
+    @include font(16px, 600, 130%, 3%);
+    color: $primary-color;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @include cleanBtn;
+}
+
+.rotate {
+    transform-box: fill-box;
+    transform: rotate(180deg);
+}
+
+.link {
+    display: inline-block;
+    @include font(16px, 600, 130%, 3%);
+    color: $primary-color;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 16px 0;
+    @include cleanBtn;
+}
+
+
+.title:hover,
+.link:hover,
+.subtitle:hover,
+.active {
+    position: relative;
+
+    &::after {
+        @include after;
+        height: 2px;
+        bottom: -6px;
+    }
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.subtitle {
+    margin: 12px 0;
+    text-decoration: none;
+    @include font(14px, 600, 130%, 3%);
+    color: $footer-bg;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 40px;
+    @include cleanBtn;
+    text-align: left;
+
+    &:hover {
+        font-weight: 700;
+    }
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.title {
+    margin: 16px 0;
+}

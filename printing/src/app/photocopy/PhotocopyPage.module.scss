@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.bgc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $header-bg;
+}
+.note {
+    width: 1116px;
+    @include flex-column-gap(12px);
+    margin-top: 16px;
+}

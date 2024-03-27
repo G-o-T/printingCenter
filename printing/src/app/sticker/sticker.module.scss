@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.bgc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $header-bg;
+}

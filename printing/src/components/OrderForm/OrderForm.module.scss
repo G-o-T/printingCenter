@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.wrapper {
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    @include h2;
+    margin-bottom: 50px;
+}
+
+.desc {
+    @include btn;
+    text-align: center;
+}
+
+.btns {
+    @include flex-column-gap(24px);
+    padding: 50px 0;
+}
+
+.btn {
+    @include btn;
+    width: 700px;
+    padding: 18px 0;
+    background-color: $light;
+    font-family: '__Montserrat_b1da2a', '__Montserrat_Fallback_b1da2a';
+    border: 1px solid $primary-color;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $header-bg;
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $primary-color;
+}

@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.bgc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $header-bg;
+}
+
+.itemTitle {
+    @include h5($primary-color);
+    position: relative; 
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.itemText {
+    border-top: 4px solid $accent-color;
+    padding-top: 10px;
+    @include text($primary-color);
+    list-style-type: none;
+}
+
+.item {
+    @include marker(12px, 3px, 16px);
+}
+
+.block {
+    display: flex;
+    gap: 64px;
+    margin-top: 64px;
+}

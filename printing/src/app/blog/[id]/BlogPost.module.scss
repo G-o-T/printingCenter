@@ -1,0 +1,31 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    margin-bottom: 85px;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.desc {
+    @include h5($primary-color);
+    font-weight: 500;
+}
+
+.par {
+    @include h5($primary-color);
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-end;
+}

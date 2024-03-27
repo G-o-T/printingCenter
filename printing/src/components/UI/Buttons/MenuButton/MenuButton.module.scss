@@ -1,0 +1,18 @@
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixins.scss";
+
+.btn {
+    position: relative;
+    @include menuBtn;
+    z-index: 10;
+}
+
+.btnActive {
+    opacity: 1;
+
+    &::after {
+        @include after;
+        height: 2px;
+        bottom: -6px;
+    }
+}
