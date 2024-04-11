@@ -36,3 +36,8 @@
 .left {
     rotate: 180deg;
 }
+
+.inactive {
+    opacity: .4;
+    pointer-events: none;
+}

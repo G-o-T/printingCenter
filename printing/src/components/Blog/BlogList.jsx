@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect } from "react";
 import BlogCard from "./BlogCards/BlogCard";
 import { getPosts } from "../../utils/getPosts";
 
@@ -7,6 +10,7 @@ const BlogList = async ({page}) => {
 
     const postsResponse = await getPosts();
     const posts = postsResponse.blogData;
+
     const lastPosts = posts.slice(-3);
 
     const blogPosts =  posts.reverse().map(i => <BlogCard key={i.id} id={i.id} title={i.title} desc={i.description} img={i.img} page={page} />);

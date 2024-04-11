@@ -11,7 +11,7 @@ const BlogBlock = () => {
         <div className={styles.bg}>
             <MaxWidthWrapper>
                 <h2 className={styles.title}>Последнее из блога</h2>
-                <BlogList page="main"/>
+                <BlogList page="main" />
                 <SecondButton className={styles.btnPadding} path='/blog'>Все статьи</SecondButton>
             </MaxWidthWrapper>
         </div>

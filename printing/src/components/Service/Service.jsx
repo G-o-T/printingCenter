@@ -7,29 +7,29 @@ import styles from "./Service.module.scss";
 
 const Service = async ({ title, parag, list, url, color, id }) => {
 
-    const defineClassName = (color) => {
-        let className;
-        switch (color) {
-            case "turquoise":
-                className = cn(styles.size, styles.turquoise);
-                break;
-            case "lavender":
-                className = cn(styles.size, styles.lavender);
-                break;
-            case "violet":
-                className = cn(styles.size, styles.violet);
-                break;
-            case "skyBlue":
-                className = cn(styles.size, styles.skyBlue);
-                break;
-            case "pink":
-                className = cn(styles.size, styles.pink);
-                break;
-            default:
-                className = styles.size;
-        }
-        return className;
-    }
+    // const defineClassName = (color) => {
+    //     let className;
+    //     switch (color) {
+    //         case "turquoise":
+    //             className = cn(styles.size, styles.turquoise);
+    //             break;
+    //         case "lavender":
+    //             className = cn(styles.size, styles.lavender);
+    //             break;
+    //         case "violet":
+    //             className = cn(styles.size, styles.violet);
+    //             break;
+    //         case "skyBlue":
+    //             className = cn(styles.size, styles.skyBlue);
+    //             break;
+    //         case "pink":
+    //             className = cn(styles.size, styles.pink);
+    //             break;
+    //         default:
+    //             className = styles.size;
+    //     }
+    //     return className;
+    // }
 
     const minPrices = await getMinPrices();
     const minPrice = minPrices[id][1];
@@ -38,7 +38,8 @@ const Service = async ({ title, parag, list, url, color, id }) => {
         <div className={styles.wrapper}>
             <MaxWidthWrapper>
                 <div className={styles.container}>
-                    <div className={defineClassName(color)}>
+                    {/* <div className={defineClassName(color)}> */}
+                    <div className={styles.size}>
                         <Image src={url} className={styles.img} alt="фото услуги"/>
                     </div>
                     <div className={styles.content}>

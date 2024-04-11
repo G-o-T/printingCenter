@@ -1,6 +1,6 @@
 'use client';
 
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,17 +16,26 @@ import img from "../../../public/arrowSlider.svg";
 
 const SimpleSlider = () => {
 
+    const [counter, setCounter] = useState(0);
+
     let sliderRef = useRef(null);
     const next = () => {
         sliderRef.slickNext();
+        if (counter < 2) {
+            setCounter(prev => prev + 1);
+        }
     };
     const previous = () => {
         sliderRef.slickPrev();
+        if (counter > 0) {
+            setCounter(prev => prev -1);
+        }
     };
 
     const settings = {
         dots: false,
-        infinite: true,
+        // infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -44,10 +53,10 @@ const SimpleSlider = () => {
                 <Slider3 index={3}/>
             </Slider>
             <div className={styles.btns}>
-                <button className={styles.btn} onClick={previous}>
+                <button className={counter > 0 ? styles.btn: cn(styles.btn, styles.inactive)} onClick={previous}>
                     <Image src={img} alt="стрелка влево" className={cn(styles.arrow, styles.left)}/>
                 </button>
-                <button className={styles.btn} onClick={next}>
+                <button className={counter < 2 ? styles.btn : cn(styles.btn, styles.inactive)} onClick={next}>
                     <Image src={img} alt="стрелка вправо" className={styles.arrow}/>
                 </button>
             </div>
