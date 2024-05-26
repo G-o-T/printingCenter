@@ -7,19 +7,58 @@
     left: 3.47vw;
     background-color: $light;
     padding: 64px;
+    z-index: 2501;
     @include offerText($primary-color);
+
+    @include for-less-1440 {
+        padding: convertPX(64);
+    }
+    
+    @include for-1024-and-less {
+        position: static;
+        font-size: 20px;
+        padding: convertPX(64) convertPX(32);
+    }
+
+    @include for-768-and-less {
+        padding: 32px 24px;
+    }
+
+    @include for-810-and-less {
+        font-size: 16px;
+    }
+
+    @include for-440-and-less {
+        font-size: 12px;
+    }
 }
 
 .contacts {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    
+    @include for-less-1440 {
+        gap: convertPX(40);
+    }
+    
+    @include for-768-and-less {
+        gap: 20px;
+    }
 }
 
 .info {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+        @include for-less-1440 {
+        gap: convertPX(20);
+    }
+
+    @include for-768-and-less {
+        gap: 20px;
+    }
 }
 
 .schedule {
@@ -29,4 +68,10 @@
 
 .title {
     @include h4;
+}
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 112px;
+    }
 }

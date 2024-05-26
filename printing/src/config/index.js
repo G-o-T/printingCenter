@@ -20,17 +20,17 @@ import calendar from "../../public/serviceImg/calendar.jpg";
 import canvas from "../../public/serviceImg/canvas.jpg";
 
 import docC from "../../public/services/carousel/docs.png";
-import designC from "../../public/services/carousel/mug.png";
+import designC from "../../public/services/carousel/design.png";
 import photoPrintC from "../../public/services/carousel/photo.png";
 import restorationC from "../../public/services/carousel/restoration.png";
 import collageC from "../../public/services/carousel/collage.png";
 import scanC from "../../public/services/carousel/copy.png";
 import widescreenC from "../../public/services/carousel/largeFormat.png";
-import postprocessC from "../../public/services/carousel/postprint.png";
-import fabricC from "../../public/services/carousel/mug.png";
+import postprocessC from "../../public/services/carousel/postPrint.png";
+import fabricC from "../../public/services/carousel/fabric.png";
 import mugC from "../../public/services/carousel/mug.png";
 import businessCardC from "../../public/services/carousel/businessCard.png";
-import stickerC from "../../public/services/carousel/mug.png";
+import stickerC from "../../public/services/carousel/sticker.png";
 import calendarC from "../../public/services/carousel/calendar.png";
 
 export const SERVICES = [
@@ -58,6 +58,11 @@ export const SERVICES = [
                 name: 'Фотоколлаж',
                 val: 'collage',
                 href: "/collage",
+            },
+            {
+                name: 'Печать на холсте',
+                val: 'canvas',
+                href: "/canvasPrint",
             },
         ]
     },
@@ -109,7 +114,7 @@ export const SERVICES = [
                 href: "/canvasPrint",
             },
             {
-                name: 'Календарь с фото',
+                name: 'Календари с фото',
                 val: 'calendar',
                 href: "/calendar",
             },
@@ -135,11 +140,6 @@ export const SERVICES = [
                 name: 'Наклейки',
                 val: 'stickers',
                 href: "/sticker",
-            },
-            {
-                name: 'Календарь с фото',
-                val: 'calendar',
-                href: '/calendar',
             },
         ]
     },
@@ -178,25 +178,25 @@ export const CONTACTS = [
     {
         id: 0,
         text: "ул. Долгобродская 14, комната 26",
-        icon: <LocationIcon />,
+        icon: <LocationIcon width={24} height={24}/>,
         icon2: null,
     },
     {
         id: 1,
         text: "subliby@mail.ru",
-        icon: <EmailIcon />,
+        icon: <EmailIcon width={24} height={24}/>,
         icon2: null,
     },
     {
         id: 2,
-        text: "+375 (29) 612 95 85",
-        icon: <ViberIcon />,
-        icon2: <TelegramIcon />,
+        text: "+375 (29) 755 35 65",
+        icon: <ViberIcon width={25} height={26}/>,
+        icon2: <TelegramIcon width={23} height={24} />,
     },
     {
         id: 3,
         text: "пн-пт с 10.00 - 18.00",
-        icon: <LabourIcon />,
+        icon: <LabourIcon width={24} height={24}/>,
         icon2: null,
     },
 ];
@@ -379,7 +379,7 @@ export const CAROUSELDATA = [
     {
         title: 'Послепечатная обработка',
         url: postprocessC,
-        color: "grey",
+        color: "lavender",
         href: "/postpressProcess",
     },
     {

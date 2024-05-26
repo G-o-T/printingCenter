@@ -1,5 +1,16 @@
+@import "../../styles/mixins.scss";
+
 .map {
     padding: 45px 0 170px;
+
+    @include for-less-1440 {
+        padding: convertPX(45) 0 convertPX(170);
+    }
+
+    @include for-1024-and-less {
+        padding: 0 0 convertPX(45) 0;
+
+    }
 }
 
 .wrapper {

@@ -7,3 +7,9 @@
     align-items: center;
     background-color: $header-bg;
 }
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 76px;
+    }
+}

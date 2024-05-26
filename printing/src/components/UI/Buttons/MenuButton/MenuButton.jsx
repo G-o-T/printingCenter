@@ -20,9 +20,23 @@ const MenuButton = ({label, href, onMouseEnter, onMouseLeave}) => {
     }
 
     return (
+        <>
+            {label === 'Прайс' 
+            ?
+            <Link
+                className={cn(styles.btn, mont.className, styles.link)}
+                target="_blank"
+                href="/price.pdf" 
+                download="price"
+            >
+                {label}
+            </Link>
+            :
             <button className={path === href ? cn(styles.btn, styles.btnActive, mont.className) : cn(styles.btn, mont.className)} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={handleClick}>
                 {label}
             </button>
+            }
+        </>
     )
 
 }

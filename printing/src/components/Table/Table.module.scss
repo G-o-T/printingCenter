@@ -3,16 +3,32 @@
 
 .margin {
     margin-top: 80px;
+
+    @include for-less-1440 {
+        margin-top: convertPX(80);
+    }
 }
 
 .wrapper {
     width: 1114px;
     background-color: $light;
     box-shadow: 0px 0px 25px #00000015;
+
+    @include for-less-1440 {
+        width: convertPX(1114);
+    }
+
+    @include for-1024-and-less {
+        width: 90vw;
+    }
 }
 
 .table {
     width: 100%;
+
+    @include for-1024-and-less {
+        width: 90vw;
+    }
 }
 
 .title {
@@ -20,6 +36,40 @@
     @include h4;
     text-align: center;
     padding: 16px 64px;
+
+    @include for-less-1440 {
+        padding: convertPX(16) convertPX(64);
+    }
+
+    @include for-768-and-less {
+        padding: convertPX(32) convertPX(64);
+        font-size: 20px;
+    }
+
+    @include for-440-and-less {
+        font-size: 16px;
+    }
+}
+
+.fakeTitle {
+    display: grid;
+    background-color: $accent-color;
+    align-items: center;
+}
+
+.fakeHeader {
+    @include h4;
+    text-align: center;
+    padding: 16px 64px;
+
+    @include for-less-1440 {
+        padding: convertPX(16) convertPX(64);
+    }
+
+    @include for-768-and-less {
+        padding: convertPX(32) convertPX(64);
+        font-size: 16px;
+    }
 }
 
 .accent {
@@ -40,18 +90,25 @@
     &:first-child {
         border-top: none;
     }
-
 }
 
 .header {
     width: 100%;
     @include h5($primary-color);
     padding: 16px 0;
+
+    @include for-440-and-less {
+        font-size: 16px;
+    }
 }
 
 .cell {
     text-align: center;
     padding: 16px 0;
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
 }
 
 .half {
@@ -72,7 +129,8 @@
 }
 
 .oneThreeOne {
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1.5fr 2.5fr 1fr;
+    align-items: center;
 }
 
 .space {
@@ -89,4 +147,12 @@
 
 .link {
     color: $primary-color;
+}
+
+.restSpec .fakeHeader, 
+.cardSpec .fakeHeader{
+    @include for-550-and-less {
+        font-size: 12px;
+        padding: 0 4px;
+    }
 }

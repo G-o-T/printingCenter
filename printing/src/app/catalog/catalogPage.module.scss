@@ -1,0 +1,367 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.container {
+    padding: 40px 0 75px;
+    @include flex-column-gap(90px);
+
+    @include for-less-1440 {
+        gap:clamp(38px, convertPX(90), 90px);
+    }
+
+    @include for-768-and-less {
+        padding-top: 76px;
+}
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+
+    @include for-less-1440 {
+        gap: clamp(20px, convertPX(45), 45px);
+    }
+}
+
+.itemsPhoto {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "docs photo photo canvas"
+    "calendar restoration collage canvas";
+
+    @include for-less-1440 {
+        gap: clamp(8px, convertPX(16), 20px);
+    }
+
+    @include for-810-and-less {
+        width: 100%;
+        grid-template-areas:
+        "docs photo"
+        "calendar restoration"
+        "collage canvas";
+    }
+}
+
+.docs {
+    grid-area: docs;
+    background-color: $turquoise;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.photo {
+    grid-area: photo;
+    background-color: $lavender;
+    height: clamp(184px, convertPX(360), 360px);
+    width: clamp(160px, convertPX(660), 660px);
+}
+
+.canvas {
+    grid-area: canvas;
+    background-color: $pink;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(376px, convertPX(740), 740px);
+
+    @include for-810-and-less {
+        height: clamp(184px, convertPX(360), 360px);
+    }
+}
+
+.restoration {
+    grid-area: restoration;
+    background-color: $grey;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.collage {
+    grid-area: collage;
+    background-color: $yellow;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.calendar {
+    grid-area: calendar;
+    background-color: $violet;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.itemsPrint {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "print widescreen widescreen scan";
+
+    @include for-less-1440 {
+        gap: clamp(8px, convertPX(16), 20px);
+    }
+
+    @include for-810-and-less {
+        width: 100%;
+        grid-template-areas:
+        "print widescreen"
+        "scan widescreen";
+    }
+}
+
+.print {
+    grid-area: print;
+    background-color: $skyBlue;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.widescreen {
+    grid-area: widescreen;
+    background-color: $yellow;
+    height: clamp(184px, convertPX(360), 360px);
+    width: clamp(160px, convertPX(660), 660px);
+
+    @include for-810-and-less {
+        height: clamp(376px, convertPX(740), 740px);
+    }
+}
+
+.scan {
+    grid-area: scan;
+    background-color: $violet;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.itemsPresent {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "shirt collage mug mug"
+    "shirt calendarPres calendarPres canvasPres";
+
+    @include for-less-1440 {
+        gap: clamp(8px, convertPX(16), 20px);
+    }
+
+    @include for-810-and-less {
+        width: 100%;
+        grid-template-areas:
+        "shirt collage"
+        "shirt canvasPres"
+        "calendarPres mug";
+    }
+}
+
+.mug {
+    grid-area: mug;
+    background-color: $turquoise;
+    width: clamp(160px, convertPX(660), 660px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.shirt {
+    grid-area: shirt;
+    background-color: $pink;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(376px, convertPX(740), 740px);
+}
+
+.canvasPres {
+    grid-area: canvasPres;
+    background-color: $pink;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(360), 360px);
+
+    @include for-810-and-less {
+        width: 46vw;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
+}
+
+.calendarPres {
+    grid-area: calendarPres;
+    background-color: $violet;
+    width: clamp(160px, convertPX(660), 660px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.itemsPoly {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "card card sticker sticker";
+
+    @include for-less-1440 {
+        gap: clamp(8px, convertPX(16), 20px);
+    }
+
+    @include for-810-and-less {
+        width: 100%;
+        grid-template-areas:
+        "card sticker";
+    }
+}
+
+.businessCard {
+    grid-area: card;
+    background-color: $violet;
+    width: clamp(160px, convertPX(660), 660px);
+    height: clamp(184px, convertPX(360), 360px);
+}
+
+.sticker {
+    grid-area: sticker;
+    background-color: $turquoise;
+    height: clamp(184px, convertPX(360), 360px);
+    width: clamp(160px, convertPX(660), 660px);
+}
+
+.itemsDesign {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "design design design design";
+
+    @include for-less-1440 {
+        gap: clamp(8px, convertPX(16), 20px);
+    }
+}
+
+.design {
+    grid-area: design;
+    background-color: $lavender;
+    width: 1340px;
+    height: clamp(184px, convertPX(360), 360px);
+
+    @include for-less-1440 {
+        width: clamp(328px, convertPX(1340), 1340px);
+        height: clamp(184px, convertPX(360), 360px);
+    }
+}
+
+.itemsPost {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "stitching stitching stitching stitching";
+
+    @include for-less-1440 {
+        gap: clamp(8px, convertPX(16), 20px);
+    }
+}
+
+.stitching {
+    grid-area: stitching;
+    background-color: $grey;
+    width: 1340px;
+    height: clamp(184px, convertPX(360), 360px);
+
+    @include for-less-1440 {
+        width: clamp(328px, convertPX(1340), 1340px);
+        height: clamp(184px, convertPX(360), 360px);
+    }
+}
+
+.specItem {
+    position: relative;
+    transition: .3s;
+    text-decoration: none;
+    color: $highlight-color;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover .title {
+        font-weight: 700;
+    }
+}
+
+.item {
+    position: relative;
+    transition: .3s;
+    text-decoration: none;
+    color: $highlight-color;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover .title {
+        font-weight: 700;
+    }
+
+    @include for-810-and-less {
+        width: 46vw;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $highlight-color;
+    cursor: pointer;
+}
+
+.img {
+    position: absolute;
+    top: 50%; 
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    @include for-less-1440 {
+        width: 80%;
+        height: auto;    
+    }
+
+    @include for-810-and-less {
+        width: 50%;    
+    }
+
+    @include for-440-and-less {
+        width: 70%;    
+    }
+}
+
+.imgCorrect {
+    width: 70%;
+    height: auto;
+}
+
+.imgCorrectPosition {
+    transform: rotate(270deg);
+    left: 60%;
+    transform:translate(-50%, -50%);
+}
+
+.imgCorrectPositionLeft {
+    left: 0;
+    transform:translate(-40%, -50%);
+}
+
+.title {
+    position: absolute;
+    bottom: 0; 
+    left:50%;
+    transform:translate(-50%, 0);
+    padding-bottom: 30px; 
+    width: max-content;
+    @include font(20px, 600, 130%, 0.6px);  
+    
+    @include for-less-1440 {
+        width: 80%; 
+        text-align: center;  
+    }
+
+    @include for-1024-and-less {
+        font-size: 16px; 
+    }
+
+    @include for-440-and-less {
+        font-size: 12px; 
+    }
+}
+

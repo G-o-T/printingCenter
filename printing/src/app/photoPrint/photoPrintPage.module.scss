@@ -10,19 +10,53 @@
 
 .note {
     margin: 16px auto 0;
-    width: 1116px;
+    width: 1114px;
     @include flex-column-gap(12px);
+
+    @include for-less-1440 {
+        width: convertPX(1114);
+    }
+
+    @include for-1024-and-less {
+        width: convertPX(1300);
+    }
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
 }
 
 .pros {
     display: flex;
     gap: 64px;
     margin: 85px 0;
+
+    @include for-less-1440 {
+        gap: convertPX(64);
+        margin: convertPX(85) 0;
+    }
+
+    @include for-550-and-less {
+        flex-direction: column;
+        gap: convertPX(80);
+    }
 }
+
+.alignment {
+    @include for-550-and-less {
+        @include flex-column-gap(32);
+        align-items: center;
+    };
+}
+
 
 .item {
     @include flex-column-gap(10px);
     align-items: center;
+
+    @include for-550-and-less {
+        width: 80vw;
+    }
 }
 
 .header {
@@ -30,6 +64,22 @@
     position: relative; 
     text-align: center;
     width: 250px;
+
+    @include for-less-1440 {
+        width: convertPX(250);
+    }
+
+    @include for-1024-and-less {
+        width: fit-content;
+    }
+
+    @include for-810-and-less {
+        font-size: 16px;
+    }
+
+    @include for-440-and-less {
+        font-size: 12px;
+    }
 }
 
 .itemText {
@@ -37,15 +87,28 @@
     padding-top: 10px;
     @include text($primary-color);
     text-align: center;
+
+    @include for-810-and-less {
+        font-size: 12px;
+    }
 }
 
 .options {
     display: flex;
     gap: 32px;
+
+    @include for-less-1440 {
+        gap: convertPX(32);
+    }
 }
 
 .block {
     display: flex;
+
+    @include for-1024-and-less {
+        flex-direction: column;
+        gap: convertPX(40);
+    }
 }
 
 .exmpl {
@@ -53,18 +116,82 @@
     align-items: center;
     justify-content: center;
     background-color: $bg;
+
+    
+    @include for-1024-and-less {
+        height: 10vh;
+    }
+
+    @include for-810-and-less {
+        height: 8vh;
+    }
+
+    @include for-440-and-less {
+        height: 5vh;
+    }
 }
 
 .desc {
     margin: 24px 0 24px 32px;
+
+    @include for-less-1440 {
+        margin: convertPX(24) 0 convertPX(24) convertPX(32);
+    }
+
+    @include for-810-and-less {
+        font-size: 12px;
+    }
 }
 
 .img {
     margin: 0 60px;
+
+    @include for-less-1440 {
+        margin: 0 convertPX(60);
+    }
+
+    @include for-1024-and-less {
+        margin: 0;
+    }
+
+    @include for-810-and-less {
+        width: 50%;
+        height: auto;
+    }
 }
 
 .title {
     @include h5($primary-color);
     padding-bottom: 8px;
+
+    @include for-810-and-less {
+        font-size: 16px;
+    }
+
+    @include for-440-and-less {
+        font-size: 12px;
+    }
 }
 
+.wrapper {
+    @include flex-column-gap(6px);
+}
+
+.noteTitle {
+    font-weight: 600;
+}
+
+.par {
+    @include marker(16px, 3px, 12px);
+}
+
+.list {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 76px;
+    }
+}

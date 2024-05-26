@@ -11,7 +11,7 @@ import img5 from "../../../../public/instaImg/5.png";
 const InstagramBlock = () => {
     return (
         <div className={styles.container}>
-            <MaxWidthWrapper>
+            <MaxWidthWrapper className={styles.paddings}>
                 <h2 className={styles.title}>
                     Следите за нами в&nbsp;
                     <span>

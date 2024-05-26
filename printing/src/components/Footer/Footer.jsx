@@ -3,6 +3,7 @@ import InstaIcon from "../UI/icons/Instagram";
 import styles from "./Footer.module.scss";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import { CONTACTS, SERVICES } from "../../config/index";
+import cn from "classnames";
 
 const Footer = () => {
 
@@ -14,12 +15,9 @@ const Footer = () => {
                         <h5 className={styles.title}>Информация о компании</h5>
                         <div className={styles.data}>
                             <p>ЧТУП “Сублимационые материалы”</p>
-                            <p>г.Минск, ул.Долгобродская, д.14, </p>
-                            <p>пом.26, индекс 220037</p>
+                            <p>г.Минск, ул.Долгобродская, д.14, пом.26, индекс 220037</p>
                             <p>УНП 192013317</p>
-                            <p>Р/С:BY67UNBS30120104310000010933, </p>
-                            <p>в РКЦ№10, ЗАО «БСБ Банк»,</p>
-                            <p> BIC UNBSBY2X</p>
+                            <p>Р/С:BY67UNBS30120104310000010933, в&nbsp;РКЦ№10, ЗАО «БСБ Банк», BIC UNBSBY2X</p>
                         </div>
                     </div>
                     <div className={styles.list}>
@@ -46,8 +44,28 @@ const Footer = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className={styles.list}>
+                    <div className={cn(styles.list, styles.catalog)}>
                         <h5 className={styles.title}>Каталог услуг</h5>
+                        <ul className={styles.items}>
+                            <li>
+                                <Link className={styles.item} href='/catalog/#photo'>Фотоуслуги</Link>
+                            </li>
+                            <li>
+                                <Link className={styles.item} href='/catalog/#print'>Печать документов</Link>
+                            </li>
+                            <li>
+                                <Link className={styles.item} href='/catalog/#present'>Сувениры и подарки</Link>
+                            </li>
+                            <li>
+                                <Link className={styles.item} href='/catalog/#poly'>Полиграфическая продукция</Link>
+                            </li>
+                            <li>
+                                <Link className={styles.item} href='/catalog/#design'>Дизайн и верстка</Link>
+                            </li>
+                            <li>
+                                <Link className={styles.item} href='/catalog/#post'>Послепечатная обработка</Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </MaxWidthWrapper>

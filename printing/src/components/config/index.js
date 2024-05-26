@@ -189,7 +189,7 @@ export const CONTACTS = [
     },
     {
         id: 2,
-        text: "+375 (29) 612 95 85",
+        text: "+375 (29) 755 35 65",
         icon: <ViberIcon />,
         icon2: <TelegramIcon />,
     },

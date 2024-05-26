@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import MenuButton from "../UI/Buttons/MenuButton/MenuButton";
 import { SERVICES } from "../../config/index";
@@ -25,18 +25,18 @@ const Dropdown = (label, href) => {
 
     return (
         <div className={styles.wrapper}>
-            <MenuButton label="Каталог услуг" href="/catalog" onMouseEnter={showDropdown} onMouseLeave={hideDropdown} />
+            <MenuButton label="Каталог услуг" href="/catalog" onMouseEnter={showDropdown} onMouseLeave={hideDropdown} onClick={hideDropdown} />
             {isExpanded && (
                 <div className={styles.dropdown} onMouseEnter={showDropdown} onMouseLeave={hideDropdown}>
                     {SERVICES.map((i, ind) => (
                         <div key={ind}>
                             {typeof i.href === 'string'
                                 ? 
-                            <Link  href={i.href} className={path === i.href ? cn(styles.link, styles.active) : cn(styles.link)}>
+                            <Link  href={i.href} className={path === i.href ? cn(styles.link, styles.active) : cn(styles.link)} onClick={hideDropdown}>
                                 {i.title}
                             </Link>
                                 :
-                            <NavRow title={i.title} options={i.options}/>
+                            <NavRow title={i.title} options={i.options} onClick={hideDropdown}/>
                             }
                         </div>
                     ))}

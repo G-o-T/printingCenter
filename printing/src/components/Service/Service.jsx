@@ -1,50 +1,25 @@
+'use client';
+
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
-import { getMinPrices } from "../../utils/getPrices";
 import Image from "next/image";
 import cn from "classnames";
-
 import styles from "./Service.module.scss";
+import { usePathname } from "next/navigation";
 
-const Service = async ({ title, parag, list, url, color, id }) => {
+const Service = ({ title, parag, list, url, color, id, minPrice }) => {
 
-    // const defineClassName = (color) => {
-    //     let className;
-    //     switch (color) {
-    //         case "turquoise":
-    //             className = cn(styles.size, styles.turquoise);
-    //             break;
-    //         case "lavender":
-    //             className = cn(styles.size, styles.lavender);
-    //             break;
-    //         case "violet":
-    //             className = cn(styles.size, styles.violet);
-    //             break;
-    //         case "skyBlue":
-    //             className = cn(styles.size, styles.skyBlue);
-    //             break;
-    //         case "pink":
-    //             className = cn(styles.size, styles.pink);
-    //             break;
-    //         default:
-    //             className = styles.size;
-    //     }
-    //     return className;
-    // }
-
-    const minPrices = await getMinPrices();
-    const minPrice = minPrices[id][1];
+    const path = usePathname();
 
     return (
         <div className={styles.wrapper}>
             <MaxWidthWrapper>
                 <div className={styles.container}>
-                    {/* <div className={defineClassName(color)}> */}
                     <div className={styles.size}>
-                        <Image src={url} className={styles.img} alt="фото услуги"/>
+                        <Image src={url} className={styles.img} alt="фото услуги" priority/>
                     </div>
-                    <div className={styles.content}>
+                    <div className={path === '/largeFormatPrint' ? cn(styles.content, styles.contentPlus) : styles.content}>
                         <div className={styles.title}>{title}</div>
-                        <div className={styles.price}>{minPrice}</div>
+                        {minPrice ? <div className={styles.price}>{minPrice}</div> : <div className={styles.fakeMinPrice}></div>}
                         <div className={styles.text}>
                             {parag.map((i, ind) => (
                                 <p key={ind}>{i}</p>

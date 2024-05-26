@@ -4,6 +4,8 @@ import MaxWidthWrapper from "../../components/MaxWidthWrapper/MaxWidthWrapper";
 import Image from "next/image";
 import Table from "../../components/Table/Table";
 import Carousel from "../../components/Carousel/Carousel";
+import { getPrices } from "@/utils/getPrices";
+import TableSkeleton from "../../components/UI/TableSkeleton/TableSkeleton";
 
 import withFields from "../../../public/serviceImg/withFields.jpg";
 import withoutFields from "../../../public/serviceImg/withoutFields.jpg";
@@ -12,10 +14,14 @@ import styles from "./photoPrintPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
-const ServicePage = () => {
+const ServicePage = async () => {
+
+    const prices = await getPrices();
     const id = 1;
     const data = SERVICESDATA[id];
     const href = "/photoPrint";
+        
+    const minPrice = prices.minPriceData[id][1];
 
     const pros = [
         {
@@ -48,10 +54,10 @@ const ServicePage = () => {
     ];
 
     return (
-        <>
+        <div className={styles.w768}>
             <BreadCrumbs
                 items={[
-                    { title: "Каталог услуг", href: "#" },
+                    { title: "Каталог услуг", href: "/catalog" },
                     { title: "Печать фотографий", href: href },
                 ]}
             />
@@ -62,14 +68,18 @@ const ServicePage = () => {
                 url={data.url}
                 color={data.color}
                 id={id}
+                minPrice={minPrice}
             />
             <div className={styles.bgc}>
-                <Table path={href} />
-                <MaxWidthWrapper>
+                {prices.length === 0 ? <TableSkeleton /> : <Table path={href} allData={prices}/>}
+                <MaxWidthWrapper className={styles.alignment}>
                     <div className={styles.note}>
-                        <p className={styles.par}>
-                            * Скидка 15% при объеме заказа более 20 фото
-                        </p>
+                        <div className={styles.wrapper}>
+                            <p className={styles.noteTitle}>Примечание:</p>
+                            <ul className={styles.list}>
+                                <li className={styles.par}>Предоставляется скидка 15% при объеме заказа более 20 фото.</li>
+                            </ul>
+                        </div>
                     </div>
                     <div className={styles.pros}>
                         {pros.map((i, ind) => (
@@ -101,7 +111,7 @@ const ServicePage = () => {
                 </MaxWidthWrapper>
                 <Carousel />
             </div>
-        </>
+        </div>
     );
 };
 

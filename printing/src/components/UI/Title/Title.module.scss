@@ -3,4 +3,12 @@
 
 .title {
     @include h2;
+
+    @include for-810-and-less {    
+        font-size: 32px !important; 
+    }
+    
+    @include for-440-and-less {    
+        font-size: 18px !important; 
+    }
 }

@@ -15,7 +15,7 @@ import arrow from "../../../public/add/arrowNav.svg"
 
 const mont = Montserrat({ subsets: ["latin"] });
 
-const NavRow = ({ title, options }) => {
+const NavRow = ({ title, options, onClick }) => {
     const [isExpanded, setExpanded] = useState(false);
     const path = usePathname();
 
@@ -43,6 +43,7 @@ const NavRow = ({ title, options }) => {
                             key={ind}
                             className={path === i.href ? cn(styles.subtitle, styles.active, styles.bold, mont.className) : cn(styles.subtitle, mont.className)} 
                             href={i.href}
+                            onClick={onClick}
                         >{i.name}</Link>
                     ))}
                 </div>)}

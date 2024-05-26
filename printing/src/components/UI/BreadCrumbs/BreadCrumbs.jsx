@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function BreadCrumbs({ items }) {
     return (
-        <MaxWidthWrapper >
+        <MaxWidthWrapper className={styles.padding}>
             <div className={styles.row}>
                 <Link href="/" className={styles.link} text="Главная">
                     Главная

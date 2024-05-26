@@ -6,3 +6,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.slick-slide > div {
+  margin: 0 convertPX(10);
+}
+
+.slick-list {
+  margin: 0 convertPX(10);
+}

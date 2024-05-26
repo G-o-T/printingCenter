@@ -19,4 +19,18 @@
         padding: 20px 60px;
         background-color: $accent-color;
     }
+
+    @include for-less-1440 {
+        padding: convertPX(20) convertPX(15);
+    }
+    
+    @include for-1024-and-less {
+        font-size: 20px; 
+    }
+
+    @include for-440-and-less {    
+        font-size: 16px;
+        width: 180px; 
+        padding: 10px 0; 
+    } 
 }

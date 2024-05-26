@@ -11,16 +11,51 @@
 .h1 {
     @include h1;
     margin-bottom: 8px;
+
+    @include for-less-1440 {
+        font-size: convertPX(88);
+        margin-bottom: convertPX(8);
+    }
+    
+    @include for-768-and-less {  
+        font-size: 40px;
+    }
+
+    @include for-440-and-less {    
+        font-size: 32px;
+    }
 }
 
 .subtitle {
     @include offerSub;
     margin-bottom: 20px;
+
+    @include for-less-1440 {
+        font-size: convertPX(46);
+        margin-bottom: convertPX(36);
+    }
+
+    @include for-768-and-less {  
+        font-size: 24px;
+    }
+
+    @include for-440-and-less {    
+        font-size: 16px;
+    }
 }
 
 .text {
     @include offerText($light);
     margin-left: 28px;
+    
+    @include for-less-1440 {
+        font-size: convertPX(24);
+        margin-left: convertPX(28);
+    }
+    
+    @include for-1024-and-less {
+        font-size: 18px;
+    }
 }
 
 .container {
@@ -29,8 +64,16 @@
 }
 
 .sliderWrapper {
-    min-height: 600px;
-    padding: 80px 110px 40px;
+
+    @include for-1440-and-more {
+        min-height: 600px;
+        padding: 80px 110px 40px;
+    }
+
+    @include between-769-and-1439 {
+        min-height: convertPX(600);
+        padding: convertPX(80) convertPX(110) convertPX(40);
+    }
 }
 
 .features {
@@ -65,11 +108,29 @@
     color: $light;
 }
 
+
+.imgBlock {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
 .img {
     position: absolute;
     right: -20px;
     top: -35px;
     z-index: 1;
+
+    @include for-less-1440 {
+        width: 50%;
+        height: auto;
+    }
+
+
+    @include for-768-and-less { 
+        position: static;   
+        width: 60%;
+    }
 }
 
 .offer {
@@ -110,4 +171,41 @@
 .blueBtn {
     background-color: $deepblue;
     color: $light;
+}
+
+.lilacBottom {
+    background: #A8379F;
+}
+
+.blueBottom {
+    background: $deepblue;
+}
+
+.blackBottom {
+    background: $accent-color;
+}
+
+
+.l {
+    display: block;
+
+    @include for-768-and-less {    
+        display: none;
+    }
+}
+
+.s {
+    display: none;
+
+    @include for-768-and-less {    
+        @include flex-column-gap(0);
+        justify-content: flex-end;
+    }
+}
+
+.textBlock {
+    width: 100%;
+    padding: convertPX(120) 16px;
+    @include flex-column-gap(16);
+    align-items: center;
 }

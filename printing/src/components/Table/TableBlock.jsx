@@ -31,30 +31,35 @@ const TableBlock = ({ title, headers, data, path, className }) => {
             case "/postpressProcess":
             case "/sticker":
             case "/canvasPrint":
-                className = title ? cn(styles.row, styles.half) : cn(styles.row, styles.half, styles.accent);
+                className = title ? cn(styles.row, styles.half) : cn(styles.half, styles.fakeTitle);
                 break;
             case "/calendar":
-                className = cn(styles.row, styles.halfPlus);
+                className = title ? cn(styles.row, styles.halfPlus) : cn(styles.halfPlus, styles.fakeTitle);
                 break;
             case "/photoPrint":
+                className = title ? cn(styles.row, styles.third) : cn(styles.third, styles.fakeTitle);
+                break;
             case "/businessCard":
-                className = cn(styles.row, styles.third);
+                className = title ? cn(styles.row, styles.third, styles.cardSpec) : cn(styles.third, styles.fakeTitle, styles.cardSpec);
                 break;
             case "/photocopy":
             case "/scan":
-                className = cn(styles.row, styles.share);
+                className = title ? cn(styles.row, styles.share) : cn(styles.share, styles.fakeTitle);
                 break;
             case "/largeFormatPrint":
-                className = cn(styles.row, styles.twoThirds);
+                className = title ? cn(styles.row, styles.twoThirds) : cn(styles.twoThirds, styles.fakeTitle);
                 break;
             case "/photoRestoration":
-                className = cn(styles.row, styles.oneThreeOne);
+                className = title ? cn(styles.row, styles.oneThreeOne, styles.restSpec) : cn(styles.oneThreeOne, styles.fakeTitle, styles.restSpec);
                 break;
         }
         return className;
     }
     
-    const defineRowClass = (headers) => {
+    const defineRowClass = () => {
+
+        const condition = headers.length > 0 && title;
+
         let className;
         switch (path) {
             case "/photoForDocuments":
@@ -65,24 +70,24 @@ const TableBlock = ({ title, headers, data, path, className }) => {
             case "/postpressProcess":
             case "/sticker":
             case "/canvasPrint":
-                className = cn((headers.length > 0 ? styles.rowBorder : styles.row), styles.half);
+                className = cn((condition ? styles.rowBorder : styles.row), styles.half);
                 break;
             case "/calendar":
-                className = cn((headers.length > 0 ? styles.rowBorder : styles.row), styles.halfPlus);
+                className = cn((condition ? styles.rowBorder : styles.row), styles.halfPlus);
                 break;
             case "/photoPrint":
             case "/businessCard":
-                className = cn((headers.length > 0 ? styles.rowBorder : styles.row), styles.third);
+                className = cn((condition ? styles.rowBorder : styles.row), styles.third);
                 break;
             case "/photocopy":
             case "/scan":
-                className = cn((headers.length > 0 ? styles.rowBorder : styles.row), styles.share);
+                className = cn((condition ? styles.rowBorder : styles.row), styles.share);
                 break;
             case "/largeFormatPrint":
-                className = cn((headers.length > 0 ? styles.rowBorder : styles.row), styles.twoThirds);
+                className = cn((condition ? styles.rowBorder : styles.row), styles.twoThirds);
                 break;
             case "/photoRestoration":
-                className = cn((headers.length > 0 ? styles.rowBorder : styles.row), styles.oneThreeOne);
+                className = cn((condition ? styles.rowBorder : styles.row), styles.oneThreeOne);
                 break;
         }
         return className;
@@ -91,8 +96,14 @@ const TableBlock = ({ title, headers, data, path, className }) => {
     return (
         <div className={cn(styles.wrapper, className)}>
             {title && <div className={styles.title}>{title}</div>}
+            {!title && 
+                <div className={defineHeaderClass()}>
+                    {headers.map((i, ind) => (
+                        <div className={styles.fakeHeader} key={ind}>{i}</div>
+                    ))}
+                </div>}
             <table className={styles.table}>
-                {headers.length > 0 && (
+                {(headers.length > 0 && title) && (
                     <thead>
                         <tr className={defineHeaderClass()}>
                             {headers.map((i, ind) => (
@@ -103,7 +114,7 @@ const TableBlock = ({ title, headers, data, path, className }) => {
                 )}
                 <tbody>
                     {data.map((i, ind) => (
-                        <tr key={ind} className={defineRowClass(headers)}>
+                        <tr key={ind} className={defineRowClass()}>
                             {i.map((j, ind) => (
                                 <td key={ind} className={styles.cell}>{convert(j)}</td>
                             ))}

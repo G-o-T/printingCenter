@@ -3,7 +3,12 @@
 
 .menu {
     display: flex;
+    align-items: center;
     gap: 48px;
+
+    @include for-less-1440 {
+        gap: convertPX(48);
+    }
 }
 
 .item {
@@ -12,6 +17,7 @@
 
 .wrapper {
     position: relative;
+    display: flex;
 }
 
 .dropdown {
@@ -92,4 +98,16 @@
 
 .title {
     margin: 16px 0;
+}
+
+.wrapperDdM {
+    background-color: $header-bg;
+    width: 100vw;
+    height: max-content;
+    @include flex-column-gap(24);
+    padding: 32px;
+}
+
+.width {
+    width: fit-content;
 }

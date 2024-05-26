@@ -14,4 +14,18 @@
     &:active {
         filter: drop-shadow(0 0 8px $light);
     }
+
+    @include for-less-1440 {
+        padding: convertPX(20) convertPX(60);
+    }
+
+    @include for-1024-and-less {
+        font-size: 20px; 
+    }
+
+    @include for-440-and-less {    
+        font-size: 16px;
+        width: 162px; 
+        padding: 10px 0; 
+    } 
 }

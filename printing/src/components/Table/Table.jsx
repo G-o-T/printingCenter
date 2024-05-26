@@ -1,5 +1,5 @@
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
-import { getPrices } from "../../utils/getPrices";
+// import { getPrices } from "../../utils/getPrices";
 import TableBlock from "./TableBlock";
 
 import styles from "./Table.module.scss";
@@ -27,12 +27,12 @@ const info = {
     },
     "/photocopy1": {
         id: "photocopyJetData",
-        headers: ['Услуга', 'А4', 'А3',],
+        headers: ['Услуга', 'А4 (210х297мм)', 'А3 (297х420мм)',],
         title: "Струйная печать",
     },
     "/photocopy2": {
         id: "photocopyLaserData",
-        headers: ['Вид бумаги', 'А4', 'SRА3',],
+        headers: ['Вид бумаги', 'А4 (210х297мм)', 'SRА3 (320х450мм)',],
         title: "Полноцветная лазерная печать",
     },
     "/largeFormatPrint1": {
@@ -139,9 +139,8 @@ const defineData = (allData, tableDataArr) => {
 }
 
 
-const Table = async ({ path }) => {
+const Table = ({ path, allData }) => {
 
-    const allData = await getPrices();
     const tableDataArr = defineInfo(path);
     defineData(allData, tableDataArr);
 

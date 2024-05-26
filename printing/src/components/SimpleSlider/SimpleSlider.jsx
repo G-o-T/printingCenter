@@ -34,7 +34,6 @@ const SimpleSlider = () => {
 
     const settings = {
         dots: false,
-        // infinite: true,
         infinite: false,
         speed: 500,
         slidesToShow: 1,

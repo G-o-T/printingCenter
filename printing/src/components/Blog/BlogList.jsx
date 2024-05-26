@@ -1,12 +1,10 @@
-'use client';
-
-import { useEffect } from "react";
 import BlogCard from "./BlogCards/BlogCard";
 import { getPosts } from "../../utils/getPosts";
 
 import styles from "./Blog.module.scss";
 
 const BlogList = async ({page}) => {
+
 
     const postsResponse = await getPosts();
     const posts = postsResponse.blogData;

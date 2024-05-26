@@ -1,6 +1,16 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
 
+.padding {
+    @include for-less-1440 {
+        padding: 0 10px;
+    }
+
+    @include for-768-and-less {
+        display: none;
+    }
+}
+
 .row {
     display: flex;
     gap: 12px;

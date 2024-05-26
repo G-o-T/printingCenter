@@ -50,6 +50,7 @@
     line-height: 150%; /* 24px */
     letter-spacing: 0.48px;
 }
+
 @mixin offerSub {
     color: $light;
     font-size: 46px;
@@ -57,6 +58,7 @@
     line-height: 130%; /* 52px */
     letter-spacing: 1.2px;
     }
+    
 @mixin offerText($color) {
     color: $color;
     font-size: 24px;
@@ -130,9 +132,53 @@
             bottom: -6px;
         }
     }
+
+    @include for-less-1440 {
+        font-size: convertPX(20);
+    }
 }
 
 @mixin cleanBtn {
     border: 0;
     background-color: transparent;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 360px) { @content; }
+}
+
+@mixin for-440-and-less {
+    @media (max-width: 440px) { @content; }
+}
+
+@mixin for-550-and-less {
+    @media (max-width: 550px) { @content; }
+}
+
+@mixin for-768-and-less {
+    @media (max-width: 768px) { @content; }
+}
+
+@mixin for-810-and-less {
+    @media (max-width: 810px) { @content; }
+}
+
+@mixin for-1024-and-less {
+    @media (max-width: 1024px) { @content; }
+}
+
+@mixin for-1300-and-less {
+    @media (max-width: 1300px) { @content; }
+}
+
+@mixin for-less-1440 {
+    @media (max-width: 1439px) { @content; }
+}
+
+@mixin for-1440-and-more {
+    @media (min-width: 1440px) { @content; }
+}
+
+@mixin between-769-and-1439 {
+    @media (min-width: 769px) and (max-width: 1439px) { @content; }
 }

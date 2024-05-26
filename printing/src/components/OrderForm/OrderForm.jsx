@@ -15,7 +15,7 @@ const OrderForm = ({className}) => {
 
     return (
         <div className={wrapper}>
-            <MaxWidthWrapper>
+            <MaxWidthWrapper className={styles.paddings}>
                 <div className={cn(styles.form, form)}>
                     <h2 className={styles.title}>Оформить онлайн заказ</h2>
                     <div className={styles.desc}>Нажмите кнопку &quot;Отправить&quot;, чтобы загрузить файлы для печати или получить консультацию</div>
@@ -30,7 +30,7 @@ const OrderForm = ({className}) => {
                             <button className={styles.btn}>Отправить файлы на почту</button>
                         </Link>
                     </div>
-                    <div className={styles.desc}>Вы также можете оформить заказ, позвонив нам <Link href="tel:+375296129585" className={styles.link}>+375 29 612 95 85</Link></div>
+                    <div className={styles.desc}>Вы также можете оформить заказ, позвонив нам <Link href="tel:+375297553565" className={styles.link}>+375&nbsp;(29)&nbsp;755&nbsp;35&nbsp;65</Link></div>
 
                 </div>
             </MaxWidthWrapper>

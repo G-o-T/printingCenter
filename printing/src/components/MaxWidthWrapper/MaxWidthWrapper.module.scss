@@ -1,4 +1,10 @@
+@import "../../styles/mixins.scss";
+
 .wrapper {
     max-width: 1340px;
     margin: 0 auto;
+
+    @include for-less-1440 {
+        max-width: convertPX(1340);
+    }
 }

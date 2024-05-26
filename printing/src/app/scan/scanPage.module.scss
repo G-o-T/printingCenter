@@ -13,6 +13,18 @@
     position: relative; 
     text-align: center;
     padding-bottom: 10px;
+
+    @include for-550-and-less {
+        width: 80vw;
+    };
+
+    @include for-810-and-less {
+        font-size: 16px;
+    }
+
+    @include for-440-and-less {
+        font-size: 12px;
+    }
 }
 
 .itemText {
@@ -20,14 +32,40 @@
     padding-top: 10px;
     @include text($primary-color);
     list-style-type: none;
+
+    @include for-810-and-less {
+        font-size: 12px;
+    }
 }
 
 .item {
     @include marker(12px, 3px, 16px);
+
+    @include for-550-and-less {
+        width: 60vw;
+    }
 }
 
 .block {
     display: flex;
     gap: 64px;
     margin-top: 64px;
+
+    @include for-less-1440 {
+        gap: convertPX(64);
+        margin-top: convertPX(64);
+    }
+
+    @include for-550-and-less {
+        @include flex-column-gap(32);
+        align-items: center;
+        gap: 32px;
+        margin-top: 32px;
+    };
+}
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 76px;
+    }
 }

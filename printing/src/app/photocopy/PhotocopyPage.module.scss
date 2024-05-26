@@ -7,8 +7,45 @@
     align-items: center;
     background-color: $header-bg;
 }
+
 .note {
-    width: 1116px;
+    width: 1114px;
     @include flex-column-gap(12px);
     margin-top: 16px;
+
+    @include for-less-1440 {
+        width: convertPX(1114);
+    }
+
+    @include for-1024-and-less {
+        width: convertPX(1300);
+    }
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
 }
+
+.wrapper {
+    @include flex-column-gap(6px);
+}
+
+.noteTitle {
+    font-weight: 600;
+}
+
+.par {
+    @include marker(16px, 3px, 12px);
+}
+
+.list {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 76px;
+    }
+}
+

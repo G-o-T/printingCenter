@@ -6,6 +6,16 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
+    
+    @include for-less-1440 {
+        margin: convertPX(110) 0 convertPX(60);
+        gap: convertPX(60);
+    }
+
+    @include for-768-and-less {
+        gap: 30px;
+        margin: 50px 0 36px;
+    }
 }
 
 .wrapper {
@@ -18,6 +28,11 @@
     top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include for-less-1440 {
+        width: 80%;
+        height: auto;
+    }
 }
 
 .btns {
@@ -28,6 +43,10 @@
     width: 1340px;
     display: flex;
     justify-content: space-between;
+
+    @include for-less-1440 {
+        width: convertPX(1340);
+    }
 }
 
 .btn {
@@ -69,16 +88,28 @@
     left: 50%;
     transform: translate(-50%, 0);
     width: max-content;
+
+    @include for-less-1440 {
+        width: fit-content;
+        text-align: center;
+        bottom: convertPX(30);
+    }
+
+    @include for-768-and-less {
+        font-size: 14px;
+    }
 }
 
 .card {
     position: relative;
-    width: 320px;
     height: 360px;
-    margin: 0 10px;
 
     &:hover .title {
         font-weight: 700;
+    }
+
+    @include for-less-1440 {
+        height: clamp(184px, convertPX(360), 360px);
     }
 }
 

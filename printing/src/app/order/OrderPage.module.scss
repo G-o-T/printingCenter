@@ -1,6 +1,11 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
+.w768 {
+    @include for-768-and-less {
+        padding-top: 112px;
+    }
+}
 
 .wrapper {
     display: flex;
@@ -9,13 +14,23 @@
 }
 
 .instructions {
-    max-width: 1117px;
+    max-width: 1114px;
     @include flex-column-gap(32px);
-    padding: 45px 0 80px;
+    padding: 80px 0;
+
+    @include for-less-1440 {
+        gap: convertPX(32);
+        padding: convertPX(80) 0;
+    }
 }
 
 .text {
     @include btn;
+    font-size: 18px;
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
 }
 
 .steps {
@@ -32,6 +47,12 @@
     &:last-child {
         align-items: flex-start;
     }
+
+    
+    @include for-less-1440 {
+        grid-template-columns: convertPX(90) 1fr;
+        gap: convertPX(24);
+    }
 }
 
 .deco {
@@ -39,6 +60,14 @@
     font-size: 100px;
     color: $bg;
     text-align: center;
+
+    @include for-less-1440 {
+        font-size: convertPX(100);
+    }
+
+    @include for-810-and-less {
+        font-size: 40px;
+    }
 }
 
 .column {
@@ -59,10 +88,19 @@
 }
 
 .formWrapper {
-    width: 1116px;
+    width: 1114px;
     background-color: $accent-color;
     padding: 85px 90px;
     box-shadow: 0px 0px 25px (#00000015);
+
+    @include for-less-1440 {
+        width: convertPX(1114);
+        padding: convertPX(85) convertPX(90);
+    }
+
+    @include for-1024-and-less {
+        width: 100vw;
+    }
 }
 
 .form {
@@ -74,6 +112,14 @@
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
+
+    @include for-less-1440 {
+        margin-bottom: convertPX(100);
+    }
+
+    @include for-768-and-less {
+        margin-bottom: 0;
+    }
 }
 
 .link {

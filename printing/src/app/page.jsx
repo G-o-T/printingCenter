@@ -7,9 +7,8 @@ import OrderForm from "../components/OrderForm/OrderForm";
 import styles from "./page.module.scss";
 
 export default function Home() {
-
     return (
-        <>
+        <div className={styles.w768}>
             <SimpleSlider />
             <Services />
             <InstagramBlock />
@@ -17,7 +16,7 @@ export default function Home() {
                 wrapper: styles.formWrapper,
                 form: styles.form,
             }}/>
-            <BlogBlock />
-        </>
+            {/* <BlogBlock /> */}
+        </div>
     );
 }

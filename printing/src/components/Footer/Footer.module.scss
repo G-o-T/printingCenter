@@ -4,16 +4,43 @@
 .container {
     background-color: $footer-bg;
     padding: 45px 0;
+
+    @include for-less-1440 {
+        padding: convertPX(45) 16px;
+    }
+
+    @include for-768-and-less {  
+        display: flex;
+        padding: 36px 16px;
+    }
 }
 
 .contactInfo {
     display: flex;
-    gap: 145px;
+    justify-content: space-between;
     @include text($light);
+
+    @include for-768-and-less {
+        @include flex-column-gap(36px);
+    }
 }
 
 .data {
     line-height: 150%;
+    max-width: 28vw;
+
+    @include for-1024-and-less {
+        max-width: 50vw;
+    }
+
+    @include for-768-and-less {
+        max-width: 90vw;
+        text-align: left;
+    }
+
+    @include for-440-and-less {    
+        font-size: 12px; 
+    }
 }
 
 .link {
@@ -22,23 +49,47 @@
 }
 
 .list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @include flex-column-gap(16px);
+}
+
+.items {
+    @include flex-column-gap(8px);
+    list-style-type: none;
+}
+
+.item {
+    color: $light;
+    text-decoration: none;
+
+    &:hover {
+        font-weight: 600;
+    }
+
+    @include for-440-and-less {    
+        font-size: 12px; 
+    }
 }
 
 .wrapper {
-    max-width: 1288px;
+    max-width: clamp(310px, 89.444vw, 1288px);
 }
 
 .title {
     @include h5($light);
+
+    @include for-440-and-less {    
+        font-size: 18px; 
+    }
 }
 
 .row {
     display: flex;
     align-items: center;
     gap: 16px;
+
+    @include for-440-and-less {    
+        font-size: 12px; 
+    }
 }
 
 .icons {
@@ -50,4 +101,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.catalog {
+    @include for-1024-and-less {
+        display: none;
+    }
 }

@@ -1,11 +1,23 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
+.hidden {
+    @include for-768-and-less {
+        display: none;
+    }
+}
+
 .rowUpper {
     display: flex;
     padding: 17px 0;
     gap: 121px;
     @include text($highlight-color);
+
+    @include for-less-1440 {
+        font-size: convertPX(16);
+        padding: convertPX(17) 0;
+        gap: convertPX(121);
+    }
 }
 
 .item {
@@ -17,15 +29,57 @@
 .listItems {
     display: flex;
     gap: 48px;
+
+    @include for-less-1440 {
+        gap: convertPX(48);
+    }
 }
 
 .rowLower {
     padding: 20px 0;
     background-color:  $header-bg;
+
+    @include for-768-and-less {
+        width: 100vw;
+        position: fixed;
+        z-index: 2504;
+        box-shadow: 4px 4px 16px #00000015;
+    }
 }
 
 .container {
     display: flex;
     align-items: center;
     gap: 244px;
+
+    @include for-less-1440 {
+        gap: convertPX(244);
+    }
+
+    @include for-768-and-less {
+        gap: 0;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+
+.shown {
+    display: none;
+
+    @include for-768-and-less {
+        display: block;
+    }
+}
+
+.burgerBtn {
+    border: none;
+}
+
+.dropdownMenu {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 74px;
+    z-index: 2503;
+    box-shadow: 4px 4px 24px #00000025;
 }

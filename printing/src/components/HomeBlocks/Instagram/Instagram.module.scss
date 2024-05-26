@@ -4,17 +4,37 @@
 .title {
     @include h2;
     text-align: center;
+
+    @include for-810-and-less {    
+        font-size: 32px !important; 
+    }
+
+    @include for-440-and-less {    
+        font-size: 18px !important; 
+    }
 }
 
 .link {
     @include h2;
     background-color: $accent-color;
     text-decoration: none;
+
+    @include for-810-and-less {    
+        font-size: 32px !important; 
+    }
+
+    @include for-440-and-less {    
+        font-size: 18px !important; 
+    }
 }
 
 .container {
     background-color: $header-bg;
     padding: 58px 0 100px;
+
+    @include for-less-1440 {
+        padding: convertPX(58) 0 convertPX(16);
+    }
 }
 
 .desc {
@@ -23,6 +43,15 @@
     align-items: center;
     margin: 44px 0;
     @include btn;
+    text-align: center;
+
+    @include for-less-1440 {
+        margin: convertPX(44) 0;
+    }
+
+    @include for-440-and-less {    
+        font-size: 12px; 
+    }
 }
 
 .photo {
@@ -31,10 +60,19 @@
     "p1 p1 p2 p3"
     "p1 p1 p4 p5";
     gap: 20px;
+
+    @include for-less-1440 {
+        gap: convertPX(20);
+    }
 }
 
 .p1 {
     grid-area: p1;
+
+    @include for-less-1440 {
+        width: convertPX(660);
+        height: convertPX(658);    
+    }
 }
 
 .p2 {
@@ -51,4 +89,17 @@
 
 .p5 {
     grid-area: p5;
+}
+
+.p2, .p3, .p4, .p5 {
+    @include for-less-1440 {
+        width: convertPX(320);
+        height: convertPX(320);    
+    }
+}
+
+.paddings {
+    @include for-less-1440 {
+        padding: convertPX(24) 16px;
+    }
 }

@@ -5,4 +5,13 @@
     background-color: $accent-color;
     padding: 65px 0;
 
+    @include for-less-1440 {
+        padding: convertPX(65) 16px;
+    }
+}
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 76px;
+    }
 }

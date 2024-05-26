@@ -1,0 +1,72 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.wrapper {
+    width: 1114px;
+    background-color: $light;
+    box-shadow: 0px 0px 25px #00000015;
+
+    @include for-less-1440 {
+        width: convertPX(1114);
+    }
+
+    @include for-1024-and-less {
+        width: 90vw;
+    }
+}
+
+.table {
+    width: 100%;
+
+    @include for-1024-and-less {
+        width: 90vw;
+    }
+}
+
+.title {
+    background-color: $accent-color;
+    @include h4;
+    text-align: center;
+    padding: 16px 64px;
+
+    @include for-less-1440 {
+        padding: convertPX(16) convertPX(64);
+    }
+
+    @include for-768-and-less {
+        padding: convertPX(32) convertPX(64);
+        font-size: 20px;
+    }
+
+    @include for-440-and-less {
+        font-size: 16px;
+    }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid $bg;
+    align-items: center;
+
+    &:first-child {
+        border-top: none;
+    }
+}
+
+.cell {
+    text-align: center;
+    padding: 16px 0;
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
+}
+
+.margin {
+    margin-top: 80px;
+
+    @include for-less-1440 {
+        margin-top: convertPX(80);
+    }
+}

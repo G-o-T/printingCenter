@@ -3,30 +3,48 @@
 
 .container {
     padding: 108px 0 75px;
+
+    @include for-less-1440 {
+        padding: convertPX(108) 0 convertPX(75);
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .wrapperShort {
+    width: clamp(360px, convertPX(1340), 1340px);
     margin-top: 58px;
     display: grid;
+    justify-content: space-between;
     gap: 20px;
     grid-template-areas: 
     "print docs photo photo"
     "print mug mug shirt"
     "restoration widescreen card shirt"
     "stitching widescreen sticker sticker";
-}
 
-.wrapperFull {
-    margin-top: 58px;
-    display: grid;
-    gap: 20px;
-    grid-template-areas: 
-    "print docs photo photo"
-    "print mug mug shirt"
-    "restoration widescreen card shirt"
-    "stitching widescreen sticker sticker"
-    "stitching calendar calendar design"
-    "collage collage scan design";
+    @include for-1440-and-more {
+        gap: 20px;
+    }
+
+    @include for-less-1440 {
+        margin-top: convertPX(58);
+        gap: clamp(8px, convertPX(16), 20px);
+    }
+
+    @include for-810-and-less {
+        width: 100%;
+        grid-template-areas:
+        "docs print"
+        "photo print"
+        "card mug"
+        "widescreen stitching" 
+        "widescreen sticker";
+    }
 }
 
 .item {
@@ -36,112 +54,162 @@
     color: $highlight-color;
     cursor: pointer;
     overflow: hidden;
+
+    &:hover .title {
+        font-weight: 700;
+    }
 }
 
 .print {
     grid-area: print;
     background-color: $skyBlue;
-    width: 320px;
-    height: 712px;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(376px, convertPX(712), 712px);
+
+    @include for-810-and-less {
+        width: 46vw;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .docs {
     grid-area: docs;
     background-color: $turquoise;
-    width: 320px;
-    height: 368px;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(368), 368px);
+
+    @include for-810-and-less {
+        width: 46vw;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .photo {
     grid-area: photo;
     background-color: $lavender;
-    height: 368px;
-    width: 660px;
+    width: clamp(160px, convertPX(660), 660px);
+    height: clamp(184px, convertPX(368), 368px);
+
+    @include for-810-and-less {
+        width: 46vw;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .mug {
     grid-area: mug;
     background-color: $violet;
-    width: 660px;
-    height: 320px;
+    width: clamp(160px, convertPX(660), 660px);
+    height: clamp(184px, convertPX(320), 320px);
+
+    @include for-810-and-less {
+        width: 46vw;
+        background-color: $pink;
+        height: clamp(184px, convertPX(368), 368px);
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .shirt {
     grid-area: shirt;
     background-color: $pink;
-    width: 320px;
-    height: 712px;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(376px, convertPX(712), 712px);
+
+    @include for-810-and-less {
+        display: none;
+    }
 }
 
 .businessCard {
     grid-area: card;
     background-color: $grey;
-    width: 320px;
-    height: 368px;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(368), 368px);
+
+    @include for-810-and-less {
+        width: 46vw;
+        background-color: $violet;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .restoration {
     grid-area: restoration;
     background-color: $grey;
-    width: 320px;
-    height: 368px;
+    width: clamp(160px, convertPX(320), 320px);
+    height: clamp(184px, convertPX(368), 368px);
+
+    @include for-810-and-less {
+        display: none;
+    }
 }
 
 .stitching {
     grid-area: stitching;
     background-color: $violet;
-    width: 320px;
+    width: clamp(160px, convertPX(320), 320px);
 
+    @include for-810-and-less {
+        width: 46vw;
+        background-color: $grey;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .short {
-    height: 368px;
+    height: clamp(184px, convertPX(368), 368px);
 }
 
 .long {
-    height: 760px;
+    height: clamp(184px, convertPX(760), 760px);
 }
 
 .widescreen {
     grid-area: widescreen;
     background-color: $yellow;
-    width: 320px;
-    
+    width: clamp(160px, convertPX(320), 320px);
+
+    @include for-810-and-less {
+        width: 46vw;
+    }
+
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .sticker {
     grid-area: sticker;
     background-color: $turquoise;
-    height: 368px;
-    width: 660px;
-}
+    width: clamp(160px, convertPX(660), 660px);
+    height: clamp(184px, convertPX(368), 368px);
 
-.calendar {
-    grid-area: calendar;
-    background-color: $skyBlue;
-    height: 368px;
-    width: 660px;
-}
+    @include for-810-and-less {
+        width: 46vw;
+    }
 
-.design {
-    grid-area: design;
-    background-color: $lavender;
-    width: 320px;
-    height: 760px;
-}
-
-.collage {
-    grid-area: collage;
-    background-color: $pink;
-    height: 368px;
-    width: 660px;
-}
-
-.scan {
-    grid-area: scan;
-    background-color: $yellow;
-    width: 320px;
-    height: 368px;
+    @include for-440-and-less {
+        width: 45vw;
+    }
 }
 
 .hidden {
@@ -159,6 +227,12 @@
     top: 50%; 
     left:50%;
     transform:translate(-50%, -50%);
+
+
+    @include for-less-1440 {
+        width: 80%;
+        height: auto;    
+    }
 }
 
 .imgCorrect {
@@ -172,8 +246,14 @@
 }
 
 .imgCorrectPositionLeft {
+    width: 110%;
+    height: auto;
     left: 0;
-    transform:translate(-40%, -50%);
+    transform:translate(-25%, -55%);
+
+    @include for-810-and-less {
+        transform:translate(-5%, -60%);
+    }
 }
 
 .title {
@@ -181,9 +261,22 @@
     bottom: 0; 
     left:50%;
     transform:translate(-50%, 0);
-    padding-bottom: 30px; 
+    padding-bottom: convertPX(30); 
     width: max-content;
-    @include font(20px, 600, 130%, 0.6px);    
+    @include font(20px, 600, 130%, 0.6px); 
+    
+    @include for-less-1440 {
+        width: 80%; 
+        text-align: center;  
+    }
+
+    @include for-1024-and-less {
+        font-size: 16px; 
+    }
+
+    @include for-440-and-less {
+        font-size: 12px; 
+    }
 }
 
 .btn {
