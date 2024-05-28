@@ -20,6 +20,11 @@ const ServicePage = async () => {
     
     const minPrice = prices.minPriceData[id][1];
 
+    export const metadata = {
+        title: "Сканирование документов в Минске",
+        description: "Быстрое сканирование документов в Минске",
+    };
+
     const lists = [
         [
             "допустимо любое состояние материалов",

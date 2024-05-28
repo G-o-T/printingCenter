@@ -9,6 +9,11 @@ import styles from "./largeFormatPrint.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Широкоформатная печать в Минске",
+    description: "Качественная широкоформатная печать в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

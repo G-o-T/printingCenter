@@ -6,6 +6,11 @@ import OrderForm from "../components/OrderForm/OrderForm";
 
 import styles from "./page.module.scss";
 
+export const metadata = {
+    title: "Печатный центр Subli.by",
+    description: "Печать документов, фотографий, изготовление сувениров, фото на документы в Минске по приемлемым ценам",
+};
+
 export default function Home() {
     return (
         <div className={styles.w768}>
@@ -16,7 +21,7 @@ export default function Home() {
                 wrapper: styles.formWrapper,
                 form: styles.form,
             }}/>
-            {/* <BlogBlock /> */}
+            <BlogBlock />
         </div>
     );
 }

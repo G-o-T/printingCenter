@@ -10,6 +10,11 @@ import styles from "./businessCardPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Изготовление визиток в Минске",
+    description: "Оперативная и качественная печать визиток в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

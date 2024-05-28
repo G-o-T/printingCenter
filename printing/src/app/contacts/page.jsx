@@ -4,6 +4,11 @@ import Title from "../../components/UI/Title/Title";
 import MapBlock from "../../components/Map/Map";
 import MaxWidthWrapper from "../../components/MaxWidthWrapper/MaxWidthWrapper";
 
+export const metadata = {
+    title: "Контакты печатного центра Subli.by",
+    description: "Печать фото, документов и сопутствующие услуги в Партизанском районе Минска",
+};
+
 const ContactsPage = () => {
     return (
         <>

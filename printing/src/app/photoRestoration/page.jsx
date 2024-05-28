@@ -20,6 +20,11 @@ const ServicePage = async () => {
     
     const minPrice = prices.minPriceData[id][1];
 
+    export const metadata = {
+        title: "Реставрация фото в Минске",
+        description: "Качественная реставрация фото в Минске",
+    };
+
     return (
         <div className={styles.w768}>
             <BreadCrumbs items={[

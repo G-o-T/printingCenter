@@ -10,6 +10,11 @@ import styles from "./fabricPrintPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Печать на футболках в Минске",
+    description: "Создание уникальных макетов листовок, визиток, коллажей в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

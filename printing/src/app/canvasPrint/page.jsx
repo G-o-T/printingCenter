@@ -9,6 +9,11 @@ import styles from "./canvasPrint.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Печать на холсте в Минске",
+    description: "Печать коллажей, фото, картин на холсте в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

@@ -10,6 +10,11 @@ import styles from "./photoForDocumentsPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Фото на документы в Минске",
+    description: "Качественные фото на документы, на которых вы себе понравитесь, в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

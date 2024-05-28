@@ -24,6 +24,12 @@ import postprint from "../../../public/services/homeBlock/catalog/postprint.png"
 
 import styles from "./catalogPage.module.scss";
 
+export const metadata = {
+    title: "Услуги печатного центра Subli.by",
+    description: "Печать фото и документов, ксерокопия документов, фото на документы, печать на холсте, широкоформатная печать, послепечатная обработка, дизайн и многое другое в Минске",
+};
+
+
 const CatalogPage = () => {
 
     return (

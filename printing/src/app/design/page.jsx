@@ -9,6 +9,11 @@ import styles from "./design.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Дизайн и верстка в Минске",
+    description: "Создание уникальных макетов листовок, визиток, коллажей в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

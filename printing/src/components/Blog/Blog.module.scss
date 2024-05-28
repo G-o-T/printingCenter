@@ -2,10 +2,13 @@
 @import "../../styles/mixins.scss";
 
 .wrapper {
-    max-width: 1340px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
+    @include for-440-and-less {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
 .card {
@@ -15,50 +18,65 @@
 }
 
 .cardContainerMain {
+    padding: 20px;
+
+    @include for-1440-and-more {
+        max-width: 432px;
+    }
+}
+
+.cardContainerBlog {
+    padding: 20px;
+}
+
+.bg {
+    background-color: $header-bg;
+    padding: 50px;
+
+    @include for-less-1440 {
+        padding: convertPX(50);
+    }
+
+    @include for-440-and-less {
+        padding-top: 24px;
+    }
+}
+
+.title {
+    padding-bottom: 62px;
+
+    @include for-less-1440 {
+        padding-bottom: convertPX(62);
+    }
+}
+
+.cardTitle {
+    @include h4;
+    margin-top: 21px;
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
+}
+
+.cardLink{
+    text-decoration: none;
+    color: $primary-color;
     background-color: $light;
-    width: 432px;
-    min-height: 458px;
-    padding: 20px 26px;
+    cursor: pointer;
 
     &:hover {
         box-shadow: 4px 4px 16px #00000015;
     }
 }
 
-.cardContainerBlog {
-    background-color: $light;
-    width: 424px;
-    padding: 20px;
-
-    &:hover {
-        box-shadow: 0px 0px 16px #00000015;
-    }
-}
-
-.bg {
-    background-color: $header-bg;
-    padding: 72px;
-}
-
-.title {
-    @include h2;
-    padding-bottom: 62px;
-}
-
-.cardTitle {
-    @include h4;
-    margin-top: 21px;
-}
-
-.cardLink{
-    text-decoration: none;
-    color: $primary-color;
-    cursor: pointer;
-}
-
 .btnPadding {
-    display: flex;
+    // display: flex;
     margin: 50px auto 0;
+
+    @include for-less-1440 {
+        margin: convertPX(50) auto 0;
+    }
 }
 
 .desc {
@@ -66,6 +84,10 @@
     padding-top: 20px;
     @include h5($primary-color);
     font-weight: 400;
+
+    @include for-440-and-less {
+        font-size: 12px;
+    }
 }
 
 .mist {
@@ -78,7 +100,12 @@
 }
 
 .img {
-    width: 384px;
-    height: 304px;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.alignment {
+    display: flex;
+    flex-direction: column;
+    
 }

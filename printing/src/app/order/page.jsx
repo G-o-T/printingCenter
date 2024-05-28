@@ -7,6 +7,11 @@ import Link from "next/link";
 import styles from "./OrderPage.module.scss";
 import cn from "classnames";
 
+export const metadata = {
+    title: "Заказать печать фото, документов, изготовление фотосувениров онлайн в Минске в печатном центре Subli.by",
+    description: "Оформление онлайн заказа на печать фото, документов, изготовление фотосувениров в Минске",
+};
+
 const OrderPage = () => {
 
     const steps = [

@@ -6,26 +6,68 @@
     flex-direction: column;
     gap: 38px;
     margin-bottom: 85px;
+
+    @include for-less-1440 {
+        margin-bottom: convertPX(85);
+    }
+
+    @include for-440-and-less {
+        gap: convertPX(80);
+    }
 }
 .text {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @include for-440-and-less {
+        gap: convertPX(38);
+    }
 }
 
 .desc {
     @include h5($primary-color);
     font-weight: 500;
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
 }
 
 .par {
     @include h5($primary-color);
     font-weight: 400;
     line-height: 140%;
+
+    @include for-440-and-less {
+        font-size: 14px;
+    }
 }
 
 .container {
     display: flex;
     gap: 50px;
     align-items: flex-end;
+
+    @include for-less-1440 {
+        gap: convertPX(50);
+    }
+
+    @include for-1024-and-less {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 112px;
+    }
+}
+
+.size {
+    @include for-550-and-less {
+        width: 90vw;
+        height: auto;
+    }
 }

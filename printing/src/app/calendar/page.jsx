@@ -19,6 +19,11 @@ const ServicePage = async () => {
 
     const minPrice = prices.minPriceData[id][1];
 
+    export const metadata = {
+        title: "Изготовление календарей из фото в Минске",
+        description: "Оперативное и качественное изготовление календарей из фото в Минске",
+    };
+
     return (
         <div className={styles.w768}>
             <BreadCrumbs items={[

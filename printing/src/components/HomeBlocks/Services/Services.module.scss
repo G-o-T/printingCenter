@@ -283,6 +283,10 @@
     display: flex;
     justify-content: center;
     margin-top: 58px;
+
+    @include for-less-1440 {
+        margin-top: convertPX(58);
+    }
 }
 
 .imgs {

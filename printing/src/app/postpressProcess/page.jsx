@@ -19,6 +19,11 @@ const ServicePage = async () => {
     
     const minPrice = prices.minPriceData[id][1];
 
+    export const metadata = {
+        title: "Послепечатная обработка фото и документов в Минске",
+        description: "Послепечатная обработка фото и документов (брошюровка, резка, ламинирование) в Минске",
+    };
+
     return (
         <div className={styles.w768}>
             <BreadCrumbs items={[

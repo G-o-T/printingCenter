@@ -10,6 +10,11 @@ import styles from "./PhotocopyPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Ксерокопия и печать в Минске",
+    description: "Оперативная ксерокопия и печать документов в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

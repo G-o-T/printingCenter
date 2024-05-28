@@ -114,6 +114,10 @@
     background-color: $accent-color;
     left: 0;
     bottom: 0;
+
+    @include for-1024-and-less {
+        height: convertPX(4);
+    }
 }
 
 @mixin menuBtn {
@@ -163,6 +167,10 @@
     @media (max-width: 810px) { @content; }
 }
 
+@mixin for-930-and-less {
+    @media (max-width: 930px) { @content; }
+}
+
 @mixin for-1024-and-less {
     @media (max-width: 1024px) { @content; }
 }
@@ -181,4 +189,8 @@
 
 @mixin between-769-and-1439 {
     @media (min-width: 769px) and (max-width: 1439px) { @content; }
+}
+
+@mixin between-441-and-1439 {
+    @media (min-width: 441px) and (max-width: 1439px) { @content; }
 }

@@ -14,6 +14,11 @@ import styles from "./photoPrintPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Печать фотографий в Минске",
+    description: "Оперативная  и качественная печать фотографий в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

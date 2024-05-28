@@ -1,8 +1,9 @@
 import styles from "./Title.module.scss";
+import cn from "classnames";
 
-const Title = ({ children}) => {
+const Title = ({ children, className}) => {
     return (
-        <h2 className={styles.title}>
+        <h2 className={cn(styles.title, className)}>
             {children}
         </h2>
     )

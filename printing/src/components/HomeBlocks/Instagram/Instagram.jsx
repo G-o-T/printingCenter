@@ -30,8 +30,12 @@ const InstagramBlock = () => {
                 </div>
                 <div className={styles.photo}>
                     <Image className={styles.p1} src={img1} alt="фото продукции" />
-                    <Image className={styles.p2} src={img2} alt="фото продукции" />
-                    <Image className={styles.p3} src={img3} alt="фото продукции" />
+                    <div className={styles.test}>
+                        <Image className={styles.p2} src={img2} alt="фото продукции" />
+                    </div>
+                    <div className={styles.test}>
+                        <Image className={styles.p3} src={img3} alt="фото продукции" />
+                    </div>
                     <Image className={styles.p4} src={img4} alt="фото продукции" />
                     <Image className={styles.p5} src={img5} alt="фото продукции" />
                 </div>

@@ -9,6 +9,11 @@ import styles from "./mugPrint.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Печать на кружках в Минске",
+    description: "Качественная печать на кружках в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

@@ -11,6 +11,11 @@ import styles from "./collagePage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Фотоколлаж в Минске",
+    description: "Создание стильных фотоколлажей из фото в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();

@@ -19,6 +19,11 @@ const ServicePage = async () => {
     
     const minPrice = prices.minPriceData[id][1];
 
+    export const metadata = {
+        title: "Изготовление наклеек и стикеров в Минске",
+        description: "Оперативное изготовление наклеек и стикеров на самоклеящейся бумаге в Минске",
+    };
+
     return (
         <div className={styles.w768}>
             <BreadCrumbs items={[

@@ -1,9 +1,20 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .wrapper {
     padding: 30px 0 60px;
+
+    @include for-less-1440 {
+        padding: convertPX(30) 0 convertPX(60);
+    }
 }
 
 .bgc {
     background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%,);
+}
+
+.w768 {
+    @include for-768-and-less {
+        padding-top: 112px;
+    }
 }

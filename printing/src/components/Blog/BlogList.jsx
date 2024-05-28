@@ -5,7 +5,6 @@ import styles from "./Blog.module.scss";
 
 const BlogList = async ({page}) => {
 
-
     const postsResponse = await getPosts();
     const posts = postsResponse.blogData;
 

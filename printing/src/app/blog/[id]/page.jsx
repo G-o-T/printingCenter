@@ -8,6 +8,12 @@ import { getImg } from "../../../utils/getImg";
 
 import styles from "./BlogPost.module.scss";
 
+export const generateMetadata = ({params}) => {
+    return {
+        title: `Печатный центр Subli.by | Пост ${params.id}`
+    }
+}
+
 const BlogPost = async ({params}) => {
 
     const postsResponse = await getPosts();
@@ -20,7 +26,7 @@ const BlogPost = async ({params}) => {
     const src = await getImg(post.img);
 
     return (
-        <>
+        <div className={styles.w768}>
             <BreadCrumbs items={[
                 { title: "Блог", href: "/blog" },
                 { title: title, href: `/${params.id}` },
@@ -28,14 +34,14 @@ const BlogPost = async ({params}) => {
             <MaxWidthWrapper className={styles.wrapper}>
                 <Title>{title}</Title>
                 <div className={styles.container}>
-                    <Image src={src.urls.regular} alt={title} width="500" height={(src.height * 500) / src.width} />
+                    <Image className={styles.size} src={src.urls.regular} alt={title} width="500" height={(src.height * 500) / src.width} />
                     <div className={styles.desc}>{desc}</div>
                 </div>
                 <div className={styles.text}>
                     {textArr.map((i, ind) => <div key={ind} className={styles.par}>{fixSquare(i)}</div>)}
                 </div>
             </MaxWidthWrapper>
-        </>
+        </div>
     )
 }
 
