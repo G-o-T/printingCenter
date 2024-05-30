@@ -10,6 +10,11 @@ import styles from "./scanPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Сканирование документов в Минске",
+    description: "Быстрое сканирование документов в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();
@@ -19,11 +24,6 @@ const ServicePage = async () => {
     const href = "/scan";
     
     const minPrice = prices.minPriceData[id][1];
-
-    export const metadata = {
-        title: "Сканирование документов в Минске",
-        description: "Быстрое сканирование документов в Минске",
-    };
 
     const lists = [
         [

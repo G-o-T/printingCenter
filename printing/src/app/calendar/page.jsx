@@ -9,6 +9,11 @@ import styles from "./calendar.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Изготовление календарей из фото в Минске",
+    description: "Оперативное и качественное изготовление календарей из фото в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();
@@ -18,11 +23,6 @@ const ServicePage = async () => {
     const href = "/calendar";
 
     const minPrice = prices.minPriceData[id][1];
-
-    export const metadata = {
-        title: "Изготовление календарей из фото в Минске",
-        description: "Оперативное и качественное изготовление календарей из фото в Минске",
-    };
 
     return (
         <div className={styles.w768}>

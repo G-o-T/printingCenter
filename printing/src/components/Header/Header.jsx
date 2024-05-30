@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import LogoIcon from "../UI/icons/Logo";
@@ -17,8 +17,14 @@ import cn from "classnames";
 import { convertImageSize } from "@/components/utils/convertImageSize";
 import DropdownMenu from "../Navbar/DropdownMenu";
 
+let screenWidth;
+
 const Header = () => {
-    const screenWidth = window.innerWidth;
+
+    useEffect(() => {
+        screenWidth = window.innerWidth;
+    }, []);
+
     const widthLogo = convertImageSize(screenWidth, 176);
     const heightLogo = convertImageSize(screenWidth, 46);
     const s23 = convertImageSize(screenWidth, 23);

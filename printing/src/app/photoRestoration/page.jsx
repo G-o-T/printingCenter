@@ -10,6 +10,11 @@ import styles from "./photoRestorationPage.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Реставрация фото в Минске",
+    description: "Качественная реставрация фото в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();
@@ -19,11 +24,6 @@ const ServicePage = async () => {
     const href = "/photoRestoration";
     
     const minPrice = prices.minPriceData[id][1];
-
-    export const metadata = {
-        title: "Реставрация фото в Минске",
-        description: "Качественная реставрация фото в Минске",
-    };
 
     return (
         <div className={styles.w768}>

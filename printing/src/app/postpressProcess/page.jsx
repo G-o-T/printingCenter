@@ -9,6 +9,11 @@ import styles from "./postpressProcess.module.scss";
 
 import { SERVICESDATA } from "../../config/index";
 
+export const metadata = {
+    title: "Послепечатная обработка фото и документов в Минске",
+    description: "Послепечатная обработка фото и документов (брошюровка, резка, ламинирование) в Минске",
+};
+
 const ServicePage = async () => {
 
     const prices = await getPrices();
@@ -18,11 +23,6 @@ const ServicePage = async () => {
     const href = "/postpressProcess";
     
     const minPrice = prices.minPriceData[id][1];
-
-    export const metadata = {
-        title: "Послепечатная обработка фото и документов в Минске",
-        description: "Послепечатная обработка фото и документов (брошюровка, резка, ламинирование) в Минске",
-    };
 
     return (
         <div className={styles.w768}>

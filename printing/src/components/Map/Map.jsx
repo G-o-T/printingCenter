@@ -1,11 +1,17 @@
 "use client";
 
+import { useEffect } from "react";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import styles from "./Map.module.scss";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
+let width;
+
 const MapBlock = ({ children }) => {
-    const width = window.innerWidth;
+
+    useEffect(() => {
+        screenWidth = window.innerWidth;
+    }, []);
 
     const conversion = (45*0.06944444444*(width/100))*2;
 
