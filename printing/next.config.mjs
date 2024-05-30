@@ -16,8 +16,6 @@ const nextConfig = {
             },
         ],
     },
-    reactStrictMode: true,
-    swcMinify: false
 };
 
 export default nextConfig;
