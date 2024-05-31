@@ -33,7 +33,7 @@ const ServicePage = async () => {
             <Service title={data.title} parag={data.parag} list={data.list} url={data.url} color={data.color} id={id} minPrice={minPrice}/>
             <div className={styles.bgc}>
                 {prices.length === 0 ? <TableSkeleton /> : <Table path={href} allData={prices}/>}
-                {/* <Carousel /> */}
+                <Carousel />
             </div>
         </div>
     )

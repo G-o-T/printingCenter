@@ -11,11 +11,11 @@ import { SERVICESDATA } from "../../config/index";
 
 export const metadata = {
     title: "Изготовление календарей из фото в Минске",
-    description: "Оперативное и качественное изготовление календарей из фото в Минске",
+    description:
+        "Оперативное и качественное изготовление календарей из фото в Минске",
 };
 
 const ServicePage = async () => {
-
     const prices = await getPrices();
 
     const id = 12;
@@ -26,17 +26,31 @@ const ServicePage = async () => {
 
     return (
         <div className={styles.w768}>
-            <BreadCrumbs items={[
+            <BreadCrumbs
+                items={[
                     { title: "Каталог услуг", href: "/catalog" },
                     { title: "Календари", href: href },
-            ]}/>
-            <Service title={data.title} parag={data.parag} list={data.list} url={data.url} color={data.color} id={id} minPrice={minPrice}/>
+                ]}
+            />
+            <Service
+                title={data.title}
+                parag={data.parag}
+                list={data.list}
+                url={data.url}
+                color={data.color}
+                id={id}
+                minPrice={minPrice}
+            />
             <div className={styles.bgc}>
-                {prices.length === 0 ? <TableSkeleton /> : <Table path={href} allData={prices}/>}
-                {/* <Carousel /> */}
+                {prices.length === 0 ? (
+                    <TableSkeleton />
+                ) : (
+                    <Table path={href} allData={prices} />
+                )}
+                <Carousel />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ServicePage;

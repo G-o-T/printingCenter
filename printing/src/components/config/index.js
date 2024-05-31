@@ -26,7 +26,7 @@ import restorationC from "../../public/services/carousel/restoration.png";
 import collageC from "../../public/services/carousel/collage.png";
 import scanC from "../../public/services/carousel/copy.png";
 import widescreenC from "../../public/services/carousel/largeFormat.png";
-import postprocessC from "../../public/services/carousel/postprint.png";
+import postprocessC from "../../public/services/carousel/postPrint.png";
 import fabricC from "../../public/services/carousel/mug.png";
 import mugC from "../../public/services/carousel/mug.png";
 import businessCardC from "../../public/services/carousel/businessCard.png";

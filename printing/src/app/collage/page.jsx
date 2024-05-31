@@ -41,7 +41,7 @@ const ServicePage = async () => {
                     <p className={styles.par}>В стоимость не входит печать готового коллажа, выбрать необходимый формат фотографии можно в <Link href="/photoPrint" className={styles.link}>разделе «Печать фотографий»</Link>.</p>
                 </div>
                 </MaxWidthWrapper>
-                {/* <Carousel /> */}
+                <Carousel />
             </div>
         </div>
     )
