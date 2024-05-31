@@ -16,7 +16,6 @@ export const metadata = {
 };
 
 const ServicePage = async () => {
-
     const prices = await getPrices();
 
     const id = 10;
@@ -43,7 +42,11 @@ const ServicePage = async () => {
                 minPrice={minPrice}
             />
             <div className={styles.bgc}>
-                {prices.length === 0 ? <TableSkeleton /> : <Table path={href} allData={prices}/>}
+                {prices.length === 0 ? (
+                    <TableSkeleton />
+                ) : (
+                    <Table path={href} allData={prices} />
+                )}
                 <MaxWidthWrapper>
                     <div className={styles.note}>
                         <p className={styles.par}>
@@ -51,7 +54,7 @@ const ServicePage = async () => {
                         </p>
                     </div>
                 </MaxWidthWrapper>
-                <Carousel />
+                {/* <Carousel /> */}
             </div>
         </div>
     );

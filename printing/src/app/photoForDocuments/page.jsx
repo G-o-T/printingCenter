@@ -50,7 +50,7 @@ const ServicePage = async () => {
                         <p className={styles.par}>Скидка предоставляется при предъявлении документа, подтверждающего право на скидку (студенческий билет, удостоверение&nbsp;и&nbsp;т.д.), или его копии.</p>
                     </div>
                 </MaxWidthWrapper>
-                <Carousel />
+                {/* <Carousel /> */}
             </div>
         </div>
     )

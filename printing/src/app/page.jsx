@@ -14,7 +14,7 @@ export const metadata = {
 export default function Home() {
     return (
         <div className={styles.w768}>
-            <SimpleSlider />
+            {/* <SimpleSlider /> */}
             <Services />
             <InstagramBlock />
             <OrderForm className={{

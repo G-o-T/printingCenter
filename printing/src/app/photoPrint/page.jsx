@@ -114,7 +114,7 @@ const ServicePage = async () => {
                         ))}
                     </div>
                 </MaxWidthWrapper>
-                <Carousel />
+                {/* <Carousel /> */}
             </div>
         </div>
     );

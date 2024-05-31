@@ -40,7 +40,7 @@ const ServicePage = async () => {
                     <p className={styles.par}>Минимальный заказ от 5 штук.</p>
                 </div>
                 </MaxWidthWrapper>
-                <Carousel />
+                {/* <Carousel /> */}
             </div>
         </div>
     )
