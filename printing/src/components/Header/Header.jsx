@@ -17,20 +17,19 @@ import cn from "classnames";
 import { convertImageSize } from "@/components/utils/convertImageSize";
 import DropdownMenu from "../Navbar/DropdownMenu";
 
-let screenWidth;
 
 const Header = () => {
 
+    const [screenWidth, setScreenWidth] = useState(undefined);
     useEffect(() => {
-        screenWidth = window.innerWidth;
+        const handleResize = () => setScreenWidth(window.innerWidth);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return window.removeEventListener('resize', handleResize)
     }, []);
 
     const widthLogo = convertImageSize(screenWidth, 176);
     const heightLogo = convertImageSize(screenWidth, 46);
-    const s23 = convertImageSize(screenWidth, 23);
-    const s24 = convertImageSize(screenWidth, 24);
-    const s25 = convertImageSize(screenWidth, 25);
-    const s26 = convertImageSize(screenWidth, 26); 
 
     const [isShown, setShown] = useState(false);
 
@@ -43,21 +42,21 @@ const Header = () => {
             <MaxWidthWrapper className={styles.hidden}>
                 <div className={styles.rowUpper}>
                     <div className={styles.item}>
-                        <LocationIcon width={Math.min(s24, 24)} height={Math.min(s24, 24)}/>
+                        <LocationIcon width={24} height={24}/>
                         <p className={styles.text}>ул. Долгобродская 14, комната 26</p>
                     </div>
                     <div className={styles.listItems}>
                         <div className={styles.item}>
-                            <EmailIcon width={Math.min(s24, 24)} height={Math.min(s24, 24)}/>
+                            <EmailIcon width={24} height={24}/>
                             <p className={styles.text}>subliby@mail.ru</p>
                         </div>
                         <div className={styles.item}>
-                            <ViberIcon width={Math.min(s25, 25)} height={Math.min(s26, 26)}/>
-                            <TelegramIcon width={Math.min(s23, 23)} height={Math.min(s24, 24)}/>
+                            <ViberIcon width={25} height={26}/>
+                            <TelegramIcon width={23} height={24}/>
                             <p className={styles.text}>+375 (29) 755 35 65</p>
                         </div>
                         <div className={styles.item}>
-                            <LabourIcon width={Math.min(s24, 24)} height={Math.min(s24, 24)}/>
+                            <LabourIcon width={24} height={24}/>
                             <p className={styles.text}>пн-пт с 10.00 - 18.00</p>
                         </div>
                     </div>
@@ -71,7 +70,7 @@ const Header = () => {
                         </Link>
                     </div>
                     <Link href="/" onClick={() => setShown(false)}>
-                        <LogoIcon width={screenWidth > 768 ? Math.min(widthLogo, 176) : 118} height={screenWidth > 768 ? Math.min(heightLogo, 46) : 32} />
+                        <LogoIcon width={screenWidth > 768 ? 176 : 118} height={screenWidth > 768 ? 46 : 32} />
                     </Link>
                     <Navbar className={styles.hidden} />
                     <div className={styles.shown}>
