@@ -27,7 +27,7 @@ const MenuButton = ({label, href, onMouseEnter, onMouseLeave}) => {
                 className={cn(styles.btn, mont.className, styles.link)}
                 target="_blank"
                 href="/price.pdf" 
-                download="price"
+                // download="price"
             >
                 {label}
             </Link>
