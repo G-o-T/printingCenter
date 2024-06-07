@@ -6,7 +6,7 @@
     align-items: center;
     gap: 48px;
 
-    @include for-less-1440 {
+    @include between-769-and-1439 {
         gap: convertPX(48);
     }
 }
@@ -23,11 +23,16 @@
 .dropdown {
     position: absolute;
     left: -24px;
-    top: 28px;
+    top: 20px;
     width: 440px;
     background-color: $header-bg;
     padding: 30px 24px 0;
     z-index: 9;
+
+    @include between-769-and-1439 {
+        width: convertPX(440);
+    } 
+
 }
 
 .block {
@@ -39,6 +44,10 @@
     align-items: center;
     width: 100%;
     @include cleanBtn;
+
+    @include between-769-and-1439 {
+        font-size: convertPX(16);
+    } 
 }
 
 .rotate {
@@ -54,6 +63,11 @@
     text-decoration: none;
     margin: 16px 0;
     @include cleanBtn;
+
+    @include between-769-and-1439 {
+        font-size: convertPX(16);
+        margin: convertPX(16) 0;
+    }
 }
 
 
@@ -87,6 +101,12 @@
     @include cleanBtn;
     text-align: left;
 
+    @include between-769-and-1439 {
+        font-size: convertPX(14);
+        margin-left: convertRX(40);
+        margin: convertRX(12) 0;
+    }
+
     &:hover {
         font-weight: 700;
     }
@@ -106,8 +126,21 @@
     height: max-content;
     @include flex-column-gap(24);
     padding: 32px;
+
+    @include between-769-and-1439 {
+        gap: convertPX(24);
+        padding: convertPX(32)
+    }
 }
 
 .width {
     width: fit-content;
+}
+
+.size {
+    
+    @include between-769-and-1439 {
+        width: convertPX(14);
+        height: auto;
+    }
 }

@@ -34,7 +34,7 @@ const NavRow = ({ title, options, onClick }) => {
         <>
             <button className={cn(styles.block, mont.className)} onClick={handleNavClick}>
                 <div className={styles.title}>{title}</div>
-                <Image alt="стрелка" src={arrow} className={isExpanded && styles.rotate}/>
+                <Image alt="стрелка" src={arrow} className={isExpanded ? cn(styles.rotate, styles.size) : styles.size}/>
             </button>
             {isExpanded && (
                 <div className={styles.links}>
