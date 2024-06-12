@@ -31,6 +31,8 @@
 
     @include between-769-and-1439 {
         width: convertPX(440);
+        padding: convertPX(30) convertPX(24) 0;
+        left: convertPX(-24);
     } 
 
 }

@@ -209,3 +209,7 @@
     @include flex-column-gap(16);
     align-items: center;
 }
+
+.whiteBtn {
+    color: $primary-color;
+}

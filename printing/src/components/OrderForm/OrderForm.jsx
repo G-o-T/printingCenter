@@ -20,13 +20,13 @@ const OrderForm = ({className}) => {
                     <h2 className={styles.title}>Оформить онлайн заказ</h2>
                     <div className={styles.desc}>Нажмите кнопку &quot;Отправить&quot;, чтобы загрузить файлы для печати или получить консультацию</div>
                     <div className={styles.btns}>
-                        <Link href={telegramLink} target="_blank">
+                        <Link href={telegramLink} target="_blank" className={styles.link}>
                             <button className={styles.btn}>Отправить файлы в Telegram</button>
                         </Link>
-                        <Link href={viberLink} target="_blank">
+                        <Link href={viberLink} target="_blank" className={styles.link}>
                             <button className={styles.btn}>Отправить файлы в Viber</button>
                         </Link>
-                        <Link href={emailLink} target="_blank">
+                        <Link href={emailLink} target="_blank" className={styles.link}>
                             <button className={styles.btn}>Отправить файлы на почту</button>
                         </Link>
                     </div>
